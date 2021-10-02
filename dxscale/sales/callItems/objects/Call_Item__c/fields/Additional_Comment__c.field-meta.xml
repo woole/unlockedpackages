@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Comment__c</fullName>
+    <description>EAD-1251 Collections Enhancements for Call Items (updated by the sales/collections person)</description>
+    <externalId>false</externalId>
+    <label>Additional Comment</label>
+    <length>60</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

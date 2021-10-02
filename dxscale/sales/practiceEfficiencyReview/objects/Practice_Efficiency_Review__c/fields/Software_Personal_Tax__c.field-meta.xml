@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Software_Personal_Tax__c</fullName>
+    <description>What software used across the practice of Personal Tax? e.g. Sage, Digita, BTC, PTP, CCH, FreeAgent, IRIS, Capium, Taxfiler, TaxCalc, HMRC, Xero. [up to 50 characters]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What software used across the practice of Personal Tax? e.g. Sage, Digita, BTC, PTP, CCH, FreeAgent, IRIS, Capium, Taxfiler, TaxCalc, HMRC, Xero [up to 50 characters]</inlineHelpText>
+    <label>Personal Tax(Other)</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

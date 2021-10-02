@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Closed</fullName>
+    <active>false</active>
+    <description>Status Reason is mandatory when the status is changed to closed,</description>
+    <errorConditionFormula>AND(
+$Setup.CallItemControlSwtich__c.Run_Validation_Rules__c, 
+ISCHANGED(Status__c),  
+Text(Status__c) = &quot;Closed&quot;,
+ISBLANK(Text( Status_Reasons__c)) 
+ )</errorConditionFormula>
+    <errorMessage>Status Reason is mandatory when the status is changed to closed,</errorMessage>
+</ValidationRule>

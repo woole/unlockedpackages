@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conversion_Rule</fullName>
+    <active>true</active>
+    <description>[CCORE-1394]As a Sales Manager I want to ensure, on conversion from a Lead, an Enterprise opportunity includes a minimum set the &apos;mandatory&apos; data required to work the opportunity</description>
+    <errorConditionFormula>AND(ISNEW(),$Setup.OpportunityControlSwitch__c.RunValidationRules__c,$Profile.Name = &quot;Sage: Global Sales User&quot;, Is_Converted__c ,RecordType.Name = &apos;Medium – Altify Opportunity&apos;,
+        AND( NOT(ISPICKVAL(Lead_Type__c,"Accountant")),
+        NOT(AND(ISPICKVAL(Lead_Type__c,"SageHR"), NOT(ISPICKVAL(Country__c,"United Kingdom")), NOT(ISPICKVAL(Country__c,"Ireland")))))  
+,OR( ISBLANK(TEXT(No_of_Sites__c)),ISBLANK(TEXT(Site_Only_In_UK__c)),ISBLANK(TEXT(Has_Multi_Currency__c)) ,ISBLANK(TEXT(Has_Multi_Legislation__c)),AND(ISBLANK(Non_UK_Countries__c),ISPICKVAL( Site_Only_In_UK__c, &quot;No&quot;)),ISBLANK(TEXT(No_of_people_using_solution__c)), ISBLANK(Pain_Gain_Challenges__c)  )     )</errorConditionFormula>
+    <errorMessage>Before converting Lead to  Enterprise opportunity following fields are mandatory .No of Sites,Sites in Local Country,Has Multi Currency ,Has Multi Legislation,Non Local Countries,No of people using solution,Pain/Gain - Challenges</errorMessage>
+</ValidationRule>

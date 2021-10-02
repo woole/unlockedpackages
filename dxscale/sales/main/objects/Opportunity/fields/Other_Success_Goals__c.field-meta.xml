@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Success_Goals__c</fullName>
+    <description>Used to store Other Success values for Onboarding Opportunities. Created as part of EAD-2161. Not to be displayed on any layouts.</description>
+    <externalId>false</externalId>
+    <label>Other Success Goals</label>
+    <length>40</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

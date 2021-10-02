@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Implementation_Type__c</fullName>
+    <description>States how which technology provides the implementation</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>States how which technology provides the implementation</inlineHelpText>
+    <label>Implementation Type</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ApexClass</fullName>
+                <default>true</default>
+                <label>ApexClass</label>
+            </value>
+            <value>
+                <fullName>Flow</fullName>
+                <default>false</default>
+                <label>Flow</label>
+            </value>
+            <value>
+                <fullName>RemoteInvocation</fullName>
+                <default>false</default>
+                <label>RemoteInvocation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

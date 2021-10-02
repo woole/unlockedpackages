@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Win_Loss_Other_Reason__c</fullName>
+    <description>Same as Opportunity-Win_Loss_Other_Reason</description>
+    <externalId>false</externalId>
+    <label>Win / Loss / Reject Comments</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

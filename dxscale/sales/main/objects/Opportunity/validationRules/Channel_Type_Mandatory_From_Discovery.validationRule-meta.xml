@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Channel_Type_Mandatory_From_Discovery</fullName>
+    <active>true</active>
+    <description>&apos;Channel Type&apos; field must be entered from the Discovery stage onward.</description>
+    <errorConditionFormula>AND( 
+   $Setup.OpportunityControlSwitch__c.RunValidationRules__c,
+   AND(!ISPICKVAL( StageName , &apos;Qualify&apos;) ,ISBLANK(TEXT( Channel_Type__c )),  OR( RecordType.DeveloperName=&apos;Enterprise_Opportunity&apos;,RecordType.DeveloperName=&apos;Standard_Opportunity&apos;),OR($Profile.Name = &apos;Sage: Global Sales User&apos;, 
+$Profile.Name = &apos;Sage: Sales User with Lightning&apos; ) )
+)</errorConditionFormula>
+    <errorMessage>&apos;Channel Type&apos; field must be entered from the Discovery stage onward.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,4 @@
+<design:component>
+    <design:attribute name="pricebookId" label="passed in pricebookId" default="recordId" description="" />
+    <!--design:attribute name="productJSON" label="" default ="[{"id":"01u1o00000Sc8kCAAR"}]" description=""/-->
+</design:component>

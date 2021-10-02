@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Output_Creation_Class__c</fullName>
+    <description>The class used to implement the Output Interface Version. This is optional for Apex Implementations but mandatory for Flow Implementations (in which case it must implement IService_Flow_Output)</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>The class used to implement the Output Interface Version. This is optional for Apex Implementations but mandatory for Flow Implementations (in which case it must implement IService_Flow_Output)</inlineHelpText>
+    <label>Output Creation Class</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

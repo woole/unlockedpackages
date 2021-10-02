@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End_time_of_sponsorship_visit__c</fullName>
+    <description>End time of sponsorship visit
+Created as part of EAD-2462</description>
+    <externalId>false</externalId>
+    <label>End time of sponsorship visit</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

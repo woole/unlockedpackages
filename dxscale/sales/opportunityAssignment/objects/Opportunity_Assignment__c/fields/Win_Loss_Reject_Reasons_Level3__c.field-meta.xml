@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Win_Loss_Reject_Reasons_Level3__c</fullName>
+    <description>Same as  Opportunity-Win_Loss_Reject_Reasons_Level3</description>
+    <externalId>false</externalId>
+    <label>Win/Loss/Reject Reasons Level3</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Functionality</fullName>
+                <default>false</default>
+                <label>Functionality</label>
+            </value>
+            <value>
+                <fullName>Accountant Recommended (please specify in notes)</fullName>
+                <default>false</default>
+                <label>Accountant Recommended (please specify in notes)</label>
+            </value>
+            <value>
+                <fullName>Group Alignment</fullName>
+                <default>false</default>
+                <label>Group Alignment</label>
+            </value>
+            <value>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <label>Service</label>
+            </value>
+            <value>
+                <fullName>System Integration</fullName>
+                <default>false</default>
+                <label>System Integration</label>
+            </value>
+            <value>
+                <fullName>Competent User</fullName>
+                <default>false</default>
+                <label>Competent User</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

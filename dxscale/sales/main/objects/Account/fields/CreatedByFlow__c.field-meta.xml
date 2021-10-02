@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CreatedByFlow__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created  for CCORE-2127 to mark it as true if it is created using flow.</description>
+    <externalId>false</externalId>
+    <label>CreatedByFlow</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

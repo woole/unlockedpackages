@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payslips_Distribute_Portal__c</fullName>
+    <description>How do you distribute payslips via Our Portal [% scale 0-100]?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How do you distribute payslips via Our Portal [% scale 0-100]?</inlineHelpText>
+    <label>Our Portal</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

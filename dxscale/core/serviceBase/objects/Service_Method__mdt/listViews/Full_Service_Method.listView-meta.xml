@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Full_Service_Method</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>NamespacePrefix</columns>
+    <columns>Async_Platform_Event__c</columns>
+    <columns>Iteration__c</columns>
+    <columns>Method__c</columns>
+    <columns>Service__c</columns>
+    <columns>Service_Implementation__c</columns>
+    <columns>Supports_Async__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Full Service Method</label>
+</ListView>

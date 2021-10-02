@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Software_Automation_Stop_Manual__c</fullName>
+    <description>If you do not use automation what would stop you from automating manual data entry?   [up to 50 characters]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If you do not use automation what would stop you from automating manual data entry?  [up to 50 characters]</inlineHelpText>
+    <label>What&apos;d stop you from automating?</label>
+    <length>50</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

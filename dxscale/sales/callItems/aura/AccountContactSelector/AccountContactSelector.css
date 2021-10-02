@@ -1,0 +1,21 @@
+.THIS {
+}
+
+.THIS .alertText {
+    color: rgb(255, 0, 0);
+}
+
+.THIS .currentSelection {
+  font-weight: 480;
+  background-color: #d5f5d5;
+  border-width: 4px;
+  border-style: solid;
+  border-color: lightgreen;
+}
+
+.THIS .custom-box {
+    background-color: #FFFFFF;
+    border-width: 2px;
+    border-style: solid;
+    border-color: lightgray;
+  }

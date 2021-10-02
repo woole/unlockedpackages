@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>AccountChangeError</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>AccountChangeError</shortDescription>
+        <value>Account can not be changed when the Opportunity has a Quote which is sent to Z-Billing</value>
+    </labels>
+    <labels>
+        <fullName>Active_Product_Holding</fullName>
+        <categories>productHoldingsSummary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Active Product Holding</shortDescription>
+        <value>Active Product Holdings</value>
+    </labels>
+    <labels>
+        <fullName>Available_Product_Holdings</fullName>
+        <categories>productHoldingsSummary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Available Product Holdings</shortDescription>
+        <value>Available Product Holdings</value>
+    </labels>
+    <labels>
+        <fullName>Can_Not_Change_The_Opportunity_It_Is_Pushed_To_Local_CRM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Can_Not_Change_The_Opportunity_It_Is_Pushed_To_Local_CRM</shortDescription>
+        <value>Opportunity Locked! You are not allowed to change the Opportunity since it is already pushed to Local CRM.</value>
+    </labels>
+    <labels>
+        <fullName>Closed_Opp_Can_Not_To_Local_CRM</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Closed_Opp_Can_Not_To_Local_CRM</shortDescription>
+        <value>Closed Opportunity cannot be sent to Local CRM.</value>
+    </labels>
+    <labels>
+        <fullName>Complaints</fullName>
+        <categories>volsls_KeyInfo</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Complaints</shortDescription>
+        <value>Complaints</value>
+    </labels>
+    <labels>
+        <fullName>ExportCustomer</fullName>
+        <categories>volsls_KeyInfo</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ExportCustomer</shortDescription>
+        <value>Is Export Customer</value>
+    </labels>
+    <labels>
+        <fullName>OPP_RT_MED_ALTIFY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OPP_RT_MED_ALTIFY</shortDescription>
+        <value>Medium – Altify Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>OPP_RT_MED_STANDARD</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OPP_RT_MED_STANDARD</shortDescription>
+        <value>Medium - Standard Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Can_Not_Be_Edited</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity_Can_Not_Be_Edited</shortDescription>
+        <value>Opportunity cannot be edited.</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Sales_Stages_Stage1</fullName>
+        <categories>Opportunity Stages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Sales Stages - Stage1</shortDescription>
+        <value>Qualify</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Sales_Stages_Stage6</fullName>
+        <categories>Opportunity Stages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Sales Stages - Stage6</shortDescription>
+        <value>Rejected</value>
+    </labels>
+    <labels>
+        <fullName>Partner</fullName>
+        <categories>volsls_KeyInfo</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Partner</shortDescription>
+        <value>other account relationships</value>
+    </labels>
+    <labels>
+        <fullName>PowerBIReportId</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>PowerBIReportId</shortDescription>
+        <value>f888825a-bcb4-4ec4-994c-1a53f422f487</value>
+    </labels>
+    <labels>
+        <fullName>PreSummaryResponse</fullName>
+        <categories>volsls_KeyInfo</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PreSummaryResponse</shortDescription>
+        <value>This Account has</value>
+    </labels>
+    <labels>
+        <fullName>Product_Holding_Modules_for_Selected_Holding</fullName>
+        <categories>productHoldingsSummary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product Holding Modules for Selected Holding</shortDescription>
+        <value>Product Holding Modules for Selected Holding</value>
+    </labels>
+    <labels>
+        <fullName>Profile_SageUKISalesStandardUser</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Profile_SageUKISalesStandardUser</shortDescription>
+        <value>Sage: UKI Sales Standard User</value>
+    </labels>
+    <labels>
+        <fullName>Profile_SystemAdministrator</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Profile_SystemAdministrator</shortDescription>
+        <value>System Administrator</value>
+    </labels>
+    <labels>
+        <fullName>Prompts</fullName>
+        <categories>volsls_KeyInfo</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Prompts</shortDescription>
+        <value>Prompts</value>
+    </labels>
+    <labels>
+        <fullName>SPPDataSyncSkipUsers</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SPPDataSyncSkipUsers</shortDescription>
+        <value>00524000007xffgAAA,00524000003w6AtAAI,005240000017oj6AAA,005240000070VfTAAU,00524000005Exc3AAC,00524000007nIYDAA2,00524000003vx0LAAQ</value>
+    </labels>
+    <labels>
+        <fullName>Unavailable</fullName>
+        <categories>productHoldingsSummary</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Unavailable</shortDescription>
+        <value>Product Holding Data is not currently available</value>
+    </labels>
+    <labels>
+        <fullName>OPP_RT_SMALL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OPP_RT_SMALL</shortDescription>
+        <value>Small Opportunity</value>
+    </labels>
+    <labels>
+        <fullName>lbl_successful_send</fullName>
+        <categories>SendToZBillingAJAXController</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Result of the send to z-billing was successful</shortDescription>
+        <value>Send to Z-Billing was successful</value>
+    </labels>
+    <labels>
+        <fullName>Card1Headline</fullName>
+        <categories>volsls_KeyInfo</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Card1Headline</shortDescription>
+        <value>Password &amp; Other Info</value>
+    </labels>
+    <labels>
+        <fullName>Card2Headline</fullName>
+        <categories>volsls_KeyInfo</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Card2Headline</shortDescription>
+        <value>Complaints,Prompts &amp; Incidents</value>
+    </labels>   
+    <labels>
+        <fullName>Product_Holdings</fullName>
+        <categories>productHoldingsSummary</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Product Holdings</shortDescription>
+        <value>Product Holdings</value>
+    </labels>  
+    <labels>
+        <fullName>EXCO_SPONSORSHIP_VISITS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EXCO_SPONSORSHIP_VISITS</shortDescription>
+        <value>The Sponsorship checkbox can only be unchecked if there are no Visit records created.</value>
+    </labels>
+    <labels>
+        <fullName>EXCO_SPONSORSHIP_VISITS_NOTIFY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>EXCO_SPONSORSHIP_VISITS_NOTIFY</shortDescription>
+        <value>This account has Sponsorship. Please visit the Sponsorship Summary for more details.</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Sales_Stages_Closed_Won</fullName>
+        <categories>Opportunity Stages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Sales Stages - Closed Won</shortDescription>
+        <value>Closed Won</value>
+    </labels>
+    <labels>
+        <fullName>Opportunity_Sales_Stages_Closed_Lost</fullName>
+        <categories>Opportunity Stages</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Opportunity Sales Stages - Closed Lost</shortDescription>
+        <value>Closed Lost</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,12 @@
+<template>
+      <lightning-card  variant="Narrow"  title={title} icon-name={iconname}>
+        <template for:each={cardinfo} for:item="info"> 
+            <template if:false={info.customStyle}>
+                <p key={info.id} class="slds-p-horizontal_small"><lightning-formatted-text value={info.message} key={info.id}></lightning-formatted-text></p>
+            </template>
+            <template if:true={info.customStyle}>
+                    <p key={info.id} class="slds-p-horizontal_small slds-text-title_bold"><lightning-formatted-text value={info.message} key={info.id}></lightning-formatted-text></p>
+            </template>
+        </template>                
+    </lightning-card>        
+</template>

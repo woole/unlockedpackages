@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="viewName" label="View Name" datasource="AccountExtra,AccountPartner,AccountPrompt,CustomerInteraction,ProductHoldings,ProductHoldingsHistory,ProductHoldingModules,ProductHoldingModules_History,SalesHistory,SalesLedger" description="Which ODS View to display"/>
+    <design:attribute name="columnJsonString" label="JSON config for Columns" description="JSON defining the data table column headers"/>
+    <design:attribute name="label" label="Header Label for the data show" description="A Label for the data shown"/>
+    <design:attribute name="rowsToLoad" label="Number of Rows to Load" description="How many Rows to preload" default="5"/>
+</design:component>

@@ -1,0 +1,82 @@
+<template>
+    <lightning-card title="Win Loss Reasons"><br/>
+        <div class="slds-grid  slds-gutters slds-grid_vertical slds-grid_align-center slds-p-left_x-small slds-p-right_x-small" >
+            <div class="slds-col">
+                <lightning-combobox required 
+                                    label="Win/Loss Sale" 
+                                    name="StageName" 
+                                    onchange={handleStageNameChange} 
+                                    onclick={handleStageNameChange} 
+                                    options={statusOptions} 
+                                    placeholder="--None--" 
+                                    value={selectedStage}></lightning-combobox><br/>
+                
+
+                
+            </div>
+            <div class={showClass1}>
+                <lightning-combobox required 
+                                    label="Win/Loss Reasons" 
+                                    name="WinLossRejectReason"
+                                    onchange={handleWinLossRejectChange} 
+                                    options={dependentValues} 
+                                    placeholder="--None--" 
+                                    value={selectedWinLossRejectReason}
+                                    disabled={isEmpty}></lightning-combobox><br/>
+                
+            </div>
+
+         
+            <div class={showClass2} >
+                <lightning-combobox label="Win/Loss Reasons Level1" 
+                                    name="wonlossrejectlevel1"
+                                    onchange={handleWinLossRejectLevel1Change} 
+                                    options={dependentLevel1Values} 
+                                    placeholder="--None--" 
+                                    value={selectedWinLossRejectLevel1}
+                                    disabled={isEmpty}></lightning-combobox><br/>
+                
+         </div>
+
+        
+            <div class={showClass3}>
+                <lightning-combobox label="Win/Loss Reasons Level2" 
+                                    name="wonlossrejectlevel2"
+                                    onchange={handleWinLossRejectLevel2Change} 
+                                    options={dependentLevel2Values} 
+                                    placeholder="--None--" 
+                                    value={selectedWinLossRejectLevel2}
+                                    disabled={isEmpty}></lightning-combobox><br/>
+                
+            </div>
+        
+
+        
+            <div class={showClass4}>
+                <lightning-combobox label="Win/Loss Reasons Level3" 
+                                    name="wonlossrejectlevel3"
+                                    onchange={handleWinLossRejectLevel3Change} 
+                                    options={dependentLevel3Values} 
+                                    placeholder="--None--" 
+                                    value={selectedWinLossRejectLevel3}
+                                    disabled={isEmpty}></lightning-combobox><br/>
+                
+            
+        </div>
+
+        <div class={showClassInputText}>
+                
+                <lightning-textarea name="winlossrejectcomments" label="Win/Loss Comments" maxlength="255"
+                                    
+                                    value={selectedWinLossRejectComments} onchange={handleWinLossRejectComments}>
+                </lightning-textarea>
+           
+          </div>
+
+        </div><br/>
+
+        <div if:true={error}>
+            <p>{error}</p>
+        </div>
+    </lightning-card>
+</template>

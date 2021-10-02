@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>The Service Method CMT relates business method names and the Service record we’ve just identified to Service Versions</description>
+    <label>Service Method</label>
+    <pluralLabel>Service Methods</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

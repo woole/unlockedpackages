@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>46.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>   
+        <targetConfig targets="lightning__AppPage, lightning__HomePage, lightning__RecordPage">
+            <property name="title" type="String" default="Key Info" label="Title"/>
+            <property name="objectApiName" type="String" default="Account" label="Object API Name"/> 
+            <property name="globalAccountId" type="String" default="" label="Field API Name" description="Page component id that will pull back the field information into nested components"/>
+            <property name="invokerId" type="String" default="DynamicQueryService_Invocation_1" label="Invoker Id" description="Different invoker ids allow for components to change their versions etc at separate paces"/>
+            <property name="recordId" type="String" default="" label="Account Id" description=""/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

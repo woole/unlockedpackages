@@ -1,0 +1,41 @@
+.c-container {
+    border: 1px solid #d8dde6;
+    background: #f8f8f8;
+
+}
+.page-section {
+    padding: 0.3rem;
+    
+}
+
+.d-table-200{
+    height: 200px;
+}
+
+.d-table-300{
+    height: 300px;
+}
+
+.d-table-400{
+    height: 400px;
+}
+
+.d-table-500{
+    height: 500px;
+}
+
+
+.page-header,
+.page-footer {
+    height: 50px;
+}
+.page-main {
+    background: #f8f8f8;
+}
+.page-left,
+.page-right {
+    background: #f0efef;
+}
+
+
+

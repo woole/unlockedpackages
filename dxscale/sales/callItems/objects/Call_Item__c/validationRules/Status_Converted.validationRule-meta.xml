@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Converted</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+$Setup.CallItemControlSwtich__c.Run_Validation_Rules__c,
+ISCHANGED(Status__c) ,
+ISPICKVAL(PRIORVALUE(Status__c),&quot;Converted&quot;)
+)</errorConditionFormula>
+    <errorMessage>&quot;Converted&quot; is a final status, you cannot change this to another value</errorMessage>
+</ValidationRule>

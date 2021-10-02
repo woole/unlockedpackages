@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ASB_Field_Mandatory</fullName>
+    <active>true</active>
+    <description>CCORE-1402  As a Sales Agent I need to mandatory fill ASB field at the Confirming Value stage of Opportunity</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,$Profile.Name = &quot;Sage: Global Sales User&quot;,Owner.Username!=&apos;Tetris User&apos;,RecordType.Name != &apos;Small Opportunity&apos; ,RecordType.DeveloperName &lt;&gt; &apos;Partner_Opportunity&apos;,OR(ISNULL(Annual_Sales_Booking_ASB__c),Annual_Sales_Booking_ASB__c&lt; 0), OR(
+    ISPICKVAL(StageName,&quot;Confirming Value&quot;) ,ISPICKVAL(StageName,&quot;Selection&quot;),ISPICKVAL(StageName,&quot;Closed Won&quot;))      )</errorConditionFormula>
+    <errorMessage>ASB is mandatory from the confirming value stage</errorMessage>
+</ValidationRule>

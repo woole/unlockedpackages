@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Output_Data__c</fullName>
+    <description>Output Data for an Service Invocation</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Output Data for an Service Invocation</inlineHelpText>
+    <label>Output Data</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

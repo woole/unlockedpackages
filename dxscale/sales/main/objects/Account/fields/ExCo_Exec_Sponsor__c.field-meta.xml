@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExCo_Exec_Sponsor__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>EAD-2227: The Sponsor</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The Sponsor</inlineHelpText>
+    <label>Sponsor</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>ExCo_Sponsor</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Lookup</type>
+</CustomField>

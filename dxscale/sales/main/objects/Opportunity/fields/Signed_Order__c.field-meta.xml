@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Signed_Order__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>for Laura Tortosa-Sanchez in line with CCORE and Release 2B</description>
+    <externalId>false</externalId>
+    <label>Signed Order</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

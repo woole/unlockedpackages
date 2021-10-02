@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SendOutBoundMessages__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Checkbox to control the issuing of account outbound messages</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checkbox to control the issuing of account outbound messages</inlineHelpText>
+    <label>Send Outbound Messages</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

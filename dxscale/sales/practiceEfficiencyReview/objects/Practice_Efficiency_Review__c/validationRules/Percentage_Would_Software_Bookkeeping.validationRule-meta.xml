@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percentage_Would_Software_Bookkeeping</fullName>
+    <active>true</active>
+    <description>Percentage must be between 0 and 100%.</description>
+    <errorConditionFormula>OR( Percentage_Would_Software_Bookkeeping__c &gt; 1.0,
+Percentage_Would_Software_Bookkeeping__c  &lt; 0.0
+)</errorConditionFormula>
+    <errorDisplayField>Percentage_Would_Software_Bookkeeping__c</errorDisplayField>
+    <errorMessage>Bookkeeping Percentage must be between 0 and 100%.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Why_We_Lost__c</fullName>
+    <description>Same as Opportunity-Why_We_Lost__c</description>
+    <externalId>false</externalId>
+    <label>Win / Loss / Reject Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Brand</fullName>
+                <default>false</default>
+                <label>Brand</label>
+            </value>
+            <value>
+                <fullName>FaaS</fullName>
+                <default>false</default>
+                <label>FaaS</label>
+            </value>
+            <value>
+                <fullName>No Decision</fullName>
+                <default>false</default>
+                <label>No Decision</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Product Integration</fullName>
+                <default>false</default>
+                <label>Product Integration</label>
+            </value>
+            <value>
+                <fullName>Proposition</fullName>
+                <default>false</default>
+                <label>Proposition</label>
+            </value>
+            <value>
+                <fullName>Service</fullName>
+                <default>false</default>
+                <label>Service</label>
+            </value>
+            <value>
+                <fullName>System Intergration</fullName>
+                <default>false</default>
+                <label>System Intergration</label>
+            </value>
+            <value>
+                <fullName>User Experience</fullName>
+                <default>false</default>
+                <label>User Experience</label>
+            </value>
+            <value>
+                <fullName>Nurture Lead</fullName>
+                <default>false</default>
+                <label>Nurture Lead</label>
+            </value>
+            <value>
+                <fullName>Rejected SQL</fullName>
+                <default>false</default>
+                <label>Rejected SQL</label>
+            </value>
+            <value>
+                <fullName>Payment Method (e.g. Monthly, annually)</fullName>
+                <default>false</default>
+                <label>Payment Method (e.g. Monthly, annually)</label>
+            </value>
+            <value>
+                <fullName>Product Functionality / Usability</fullName>
+                <default>false</default>
+                <label>Product Functionality / Usability</label>
+            </value>
+            <value>
+                <fullName>Sales/Marketing Process</fullName>
+                <default>false</default>
+                <label>Sales/Marketing Process</label>
+            </value>
+            <value>
+                <fullName>Relationship with Sage</fullName>
+                <default>false</default>
+                <label>Relationship with Sage</label>
+            </value>
+            <value>
+                <fullName>Change in customer&apos;s business</fullName>
+                <default>false</default>
+                <label>Change in customer&apos;s business</label>
+            </value>
+            <value>
+                <fullName>Unable to contact</fullName>
+                <default>false</default>
+                <label>Unable to contact</label>
+            </value>
+            <value>
+                <fullName>No reason specified</fullName>
+                <default>false</default>
+                <label>No reason specified</label>
+            </value>
+            <value>
+                <fullName>Payment Method</fullName>
+                <default>false</default>
+                <label>Payment Method</label>
+            </value>
+            <value>
+                <fullName>Production Functionality / Usability</fullName>
+                <default>false</default>
+                <label>Production Functionality / Usability</label>
+            </value>
+            <value>
+                <fullName>References</fullName>
+                <default>false</default>
+                <label>References</label>
+            </value>
+            <value>
+                <fullName>Timescale to implement</fullName>
+                <default>false</default>
+                <label>Timescale to implement</label>
+            </value>
+            <value>
+                <fullName>Compliance with legislation</fullName>
+                <default>false</default>
+                <label>Compliance with legislation</label>
+            </value>
+            <value>
+                <fullName>Not ready to make a decision</fullName>
+                <default>false</default>
+                <label>Not ready to make a decision</label>
+            </value>
+            <value>
+                <fullName>False Opportunity</fullName>
+                <default>false</default>
+                <label>False Opportunity</label>
+            </value>
+            <value>
+                <fullName>Withdrawal from bid process</fullName>
+                <default>false</default>
+                <label>Withdrawal from bid process</label>
+            </value>
+            <value>
+                <fullName>No Project</fullName>
+                <default>false</default>
+                <label>No Project</label>
+            </value>
+            <value>
+                <fullName>No Budget</fullName>
+                <default>false</default>
+                <label>No Budget</label>
+            </value>
+            <value>
+                <fullName>Needs Default</fullName>
+                <default>false</default>
+                <label>Needs Default</label>
+            </value>
+            <value>
+                <fullName>No Decision Maker</fullName>
+                <default>false</default>
+                <label>No Decision Maker</label>
+            </value>
+            <value>
+                <fullName>Client opted for another Sage product</fullName>
+                <default>false</default>
+                <label>Client opted for another Sage product</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>Won from Competitor</fullName>
+                <default>false</default>
+                <label>Won from Competitor</label>
+            </value>
+            <value>
+                <fullName>Training needed</fullName>
+                <default>false</default>
+                <label>Training needed</label>
+            </value>
+            <value>
+                <fullName>Feature Requirement</fullName>
+                <default>false</default>
+                <label>Feature Requirement</label>
+            </value>
+            <value>
+                <fullName>Service Enhancement</fullName>
+                <default>false</default>
+                <label>Service Enhancement</label>
+            </value>
+            <value>
+                <fullName>(Renewal) Happy with current solution</fullName>
+                <default>false</default>
+                <label>(Renewal) Happy with current solution</label>
+            </value>
+            <value>
+                <fullName>(Renewal) Retention conversation required</fullName>
+                <default>false</default>
+                <label>(Renewal) Retention conversation required</label>
+            </value>
+            <value>
+                <fullName>No current solution</fullName>
+                <default>false</default>
+                <label>No current solution</label>
+            </value>
+            <value>
+                <fullName>Sage Loyalty</fullName>
+                <default>false</default>
+                <label>Sage Loyalty</label>
+            </value>
+            <value>
+                <fullName>Lost from Competitor</fullName>
+                <default>false</default>
+                <label>Lost from Competitor</label>
+            </value>
+            <value>
+                <fullName>Outsourced</fullName>
+                <default>false</default>
+                <label>Outsourced</label>
+            </value>
+            <value>
+                <fullName>Used for Study</fullName>
+                <default>false</default>
+                <label>Used for Study</label>
+            </value>
+            <value>
+                <fullName>Liquidated/Out Of Business</fullName>
+                <default>false</default>
+                <label>Liquidated/Out Of Business</label>
+            </value>
+            <value>
+                <fullName>Wont Share Reason</fullName>
+                <default>false</default>
+                <label>Wont Share Reason</label>
+            </value>
+            <value>
+                <fullName>Happy With Current Solution</fullName>
+                <default>false</default>
+                <label>Happy With Current Solution</label>
+            </value>
+            <value>
+                <fullName>No Support Wanted</fullName>
+                <default>false</default>
+                <label>No Support Wanted</label>
+            </value>
+            <value>
+                <fullName>No Longer Interested</fullName>
+                <default>false</default>
+                <label>No Longer Interested</label>
+            </value>
+            <value>
+                <fullName>Internal Referral Qualification Issue</fullName>
+                <default>false</default>
+                <label>Internal Referral Qualification Issue</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Decision Deferred - Project on Hold</fullName>
+                <default>false</default>
+                <label>Decision Deferred - Project on Hold</label>
+            </value>
+            <value>
+                <fullName>Customer Unresponsive</fullName>
+                <default>false</default>
+                <label>Customer Unresponsive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

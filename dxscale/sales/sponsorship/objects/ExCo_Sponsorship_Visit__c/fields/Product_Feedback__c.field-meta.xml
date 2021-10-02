@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Feedback__c</fullName>
+    <description>EAD-2227: Feedback on Sage product / experience</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Feedback on Sage product / experience[Upto 1000 characters]</inlineHelpText>
+    <label>Feedback on Sage product / experience</label>
+    <length>1000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

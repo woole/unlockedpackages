@@ -1,0 +1,90 @@
+<template>
+    <div class="slds-grid slds-wrap slds-tabs_card" if:false={isEditable}>
+        <div class="slds-col slds-size_1-of-3">
+            <div class="slds-text-title_bold" style="font-size: 20px;text-align:center;">Customer <br/> Insight View</div>
+        </div>
+        <div class="slds-col slds-size_2-of-3">
+            <lightning-record-view-form
+                record-id={recordId}
+                object-api-name="Account"
+                density="compact">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name="Insight_1__c">
+                        </lightning-output-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name="Insight_2__c">
+                        </lightning-output-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name="Insight_3__c">
+                        </lightning-output-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name="Insight_4__c">
+                        </lightning-output-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name="Insight_5__c">
+                        </lightning-output-field>
+                    </div>
+                    <div class="slds-col slds-size_1-of-2">
+                        <lightning-output-field field-name="Insight_6__c">
+                        </lightning-output-field>
+                    </div> 
+                </div>
+            </lightning-record-view-form>
+        </div>
+    </div>
+
+    <lightning-record-edit-form record-id={recordId}
+                                        object-api-name="Account"
+                                        density="compact"
+                                        onsuccess={showToast}>
+        <div class="slds-grid slds-wrap slds-tabs_card" if:true={isEditable}>
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-text-title_bold" style="font-size: 20px;text-align:center;">Customer <br/> Insight View <br/></div>
+                <div style="text-align:center;padding-top: 30px;"> 
+                    <lightning-button
+                    class="slds-m-top_small"
+                    variant="brand"
+                    type="submit"
+                    name="update"
+                    label="Update">
+                    </lightning-button>
+                </div>
+            </div>
+            <div class="slds-col slds-size_2-of-3">
+                    <lightning-messages>
+                    </lightning-messages>
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Insight_1__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Insight_2__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Insight_3__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Insight_4__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Insight_5__c">
+                            </lightning-input-field>
+                        </div>
+                        <div class="slds-col slds-size_1-of-2">
+                            <lightning-input-field field-name="Insight_6__c">
+                            </lightning-input-field>
+                        </div> 
+                    </div>
+            </div>
+        </div>
+    </lightning-record-edit-form>
+</template>

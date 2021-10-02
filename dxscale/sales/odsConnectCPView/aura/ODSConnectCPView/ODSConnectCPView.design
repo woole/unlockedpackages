@@ -1,0 +1,9 @@
+<design:component>
+    <design:attribute name="viewName" label="View name" datasource="AccountExtra,AccountPartner,AccountPrompt,CustomerInteraction,ProductHoldings,ProductHoldingsHistory,ProductHoldingModules,ProductHoldingModuleHistory,SalesHistory,SalesLedger" description="Which ODS View to display"/>
+    <design:attribute name="columnJsonString" label="JSON config for columns" description="JSON to define the data table column headers"/>
+    <design:attribute name="label" label="Header label for the data shown" description="A label for the data shown"/>
+    <design:attribute name="pageSize" label="Number of rows to display" description="How many rows to display"/>
+    <design:attribute name="autoFetch" label="Automatic fetch" description="Automatically retrieve data without clicking Fetch button"/>
+    <design:attribute name="allowFilter" label="Allow filtering of results" description="Allow case-insensitive filtering of results via search text"/>
+    <design:attribute name="paginate" label="Paginate retrieved data" description="Paginate retrieved data onscreen"/>
+</design:component>

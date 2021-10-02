@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SW_Employee_Benefits_Provider__c</fullName>
+    <description>What software used across the practice of Employee Benefits Provider? [select one of dropdown values]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What software used across the practice of Employee Benefits Provider? [select one of dropdown values]</inlineHelpText>
+    <label>Employee Benefits Provider</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other (please state)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

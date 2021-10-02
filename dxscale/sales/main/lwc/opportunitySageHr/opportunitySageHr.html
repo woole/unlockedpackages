@@ -1,0 +1,43 @@
+<!--
+* Created as part of UKIHARM-159
+* Author :- Dharani Sai Chennupati
+* Object - Opportunity
+* Description :- A new LWC called SageHr to be displayed when Lead Type is SageHr and Country
+* is non UKI on Opportunity.
+* Date - 7th April 2021
+-->
+<template>
+    <div class="opportunity-container">
+    <lightning-record-edit-form record-id={recordId} object-api-name="Opportunity" onsuccess={handleSuccess}>
+    <div class="opportunity-title">
+    <p style="font-size:15px"><lightning-output-field  field-name="Lead_Type__c" variant="label-hidden"></lightning-output-field></p>
+    <lightning-messages>
+    </lightning-messages>                 
+    </div> 
+    <div class="slds-grid">
+    <div class="slds-col slds-size_1-of-2">
+        <lightning-input-field field-name="Pain_Points_with_Current_Solution__c" onchange={handleChange}></lightning-input-field>
+        <template if:true={opportunity.data}>
+        <div class="slds-m-around_medium">
+                <p>Number of Employees : <span class="inner-div">{employees}</span> </p>
+        </div>
+    <div class="slds-m-around_medium">
+        <p>Industry : <span class="inner-div2"> {industry}</span></p>   
+    </div>
+    </template>
+    </div>
+    <div class="slds-col slds-size_1-of-2">
+    <lightning-input-field field-name="Decision_Maker__c" onchange={handleChange}></lightning-input-field>
+    <lightning-input-field field-name="ResolvedByDate__c" onchange={handleChange}></lightning-input-field>  
+    <lightning-input-field field-name="Intercom_URL__c" onchange={handleChange}></lightning-input-field>
+    <lightning-input-field field-name="Recurly_Account_ID__c" onchange={handleChange}></lightning-input-field>                  
+    </div>
+    </div>
+    <div class="slds-grid slds-grid_align-center slds-p-left_x-small">
+    <lightning-button label="Cancel" variant="neutral" onclick={handleCancel}></lightning-button>                    
+    &nbsp;
+    <lightning-button label="Save" variant="brand" type="submit" onclick={handleSave} disabled={disabledSave}></lightning-button>
+    </div>
+    </lightning-record-edit-form>
+    </div>
+</template>

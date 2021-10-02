@@ -1,0 +1,14 @@
+.attention_red {
+    background : rgb(247, 99, 99);
+    background-blend-mode: hard-light;
+}
+
+.attention_green {
+    background : rgb(133, 218, 112);
+    background-blend-mode: hard-light;
+}
+
+.attention_amber {
+    background : rgb(243, 179, 42);
+    background-blend-mode: hard-light;
+}

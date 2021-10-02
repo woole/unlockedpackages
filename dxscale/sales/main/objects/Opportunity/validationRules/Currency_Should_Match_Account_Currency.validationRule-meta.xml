@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Currency_Should_Match_Account_Currency</fullName>
+    <active>true</active>
+    <description>Throw an error when opportunity currency doesn&apos;t match with account currency for volume opportunity recordtype</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,RecordType.DeveloperName = &apos;Volume_Opportunity&apos;,
+      Text(CurrencyIsoCode) !=  Text(Account.CurrencyIsoCode)
+    )</errorConditionFormula>
+    <errorDisplayField>CurrencyIsoCode</errorDisplayField>
+    <errorMessage>You attempted to save the Opportunity with a Currency that is not valid for the Country listed in the Account. Please choose the Currency associated with the Account&apos;s country</errorMessage>
+</ValidationRule>

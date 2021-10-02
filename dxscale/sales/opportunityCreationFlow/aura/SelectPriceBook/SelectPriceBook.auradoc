@@ -1,0 +1,7 @@
+<aura:documentation>
+	<aura:description>Select Price Book</aura:description>
+	<aura:example name="ExampleName" ref="exampleComponentName" label="Label">
+		Price Book Selector. Shows a drop down of price books.
+		These are not filtered by currency
+	</aura:example>
+</aura:documentation>

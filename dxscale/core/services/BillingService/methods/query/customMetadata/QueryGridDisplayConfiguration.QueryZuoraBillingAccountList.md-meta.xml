@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>QueryZuoraBillingAccountList</label>
+    <protected>false</protected>
+    <values>
+        <field>JSONConfig__c</field>
+        <value xsi:type="xsd:string">{
+    &quot;limitRows&quot;: 200,
+    &quot;whereClause&quot;: &quot;Zuora__Account__c = &quot;,
+    &quot;orderByClause&quot;: &quot;Zuora__AccountNumber__c&quot;,
+    &quot;terminal&quot;: true,
+    &quot;fields&quot;: [
+        {
+            &quot;label&quot;: &quot;Id&quot;,
+            &quot;api&quot;: &quot;Id&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;sortable&quot;: true,
+            &quot;display&quot;: true
+        },     
+        {
+            &quot;label&quot;: &quot;ZuoraId&quot;,
+            &quot;api&quot;: &quot;Zuora__Zuora_Id__c&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;sortable&quot;: true,
+            &quot;display&quot;: true
+        },
+        {
+            &quot;label&quot;: &quot;Zuora Account&quot;,
+            &quot;api&quot;: &quot;Zuora__AccountNumber__c&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;sortable&quot;: true,
+            &quot;display&quot;: true
+        },
+        {
+            &quot;label&quot;: &quot;Account Id&quot;,
+            &quot;api&quot;: &quot;Zuora__Account__c&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;sortable&quot;: true,
+            &quot;display&quot;: true
+        },
+        {
+            &quot;label&quot;: &quot;Bill To ID&quot;,
+            &quot;api&quot;: &quot;Zuora__BillToId__c&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;sortable&quot;: true,
+            &quot;display&quot;: true
+        },
+        {
+            &quot;label&quot;: &quot;Billing Email&quot;,
+            &quot;api&quot;: &quot;Zuora__BillToWorkEmail__c&quot;,
+            &quot;type&quot;: &quot;String&quot;,
+            &quot;sortable&quot;: true,
+            &quot;display&quot;: true
+        }
+    ],
+    &quot;objectType&quot;: &quot;Zuora__CustomerAccount__c&quot;
+}</value>
+    </values>
+</CustomMetadata>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PracticeReselling__c</fullName>
+    <description>How important is making a profit from reselling software</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How important is making a profit from reselling software</inlineHelpText>
+    <label>Reselling/recharging software</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not at all</fullName>
+                <default>false</default>
+                <label>Not at all</label>
+            </value>
+            <value>
+                <fullName>Not really</fullName>
+                <default>false</default>
+                <label>Not really</label>
+            </value>
+            <value>
+                <fullName>Neutral</fullName>
+                <default>false</default>
+                <label>Neutral</label>
+            </value>
+            <value>
+                <fullName>Somewhat</fullName>
+                <default>false</default>
+                <label>Somewhat</label>
+            </value>
+            <value>
+                <fullName>Very</fullName>
+                <default>false</default>
+                <label>Very</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

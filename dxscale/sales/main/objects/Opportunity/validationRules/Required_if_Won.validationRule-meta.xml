@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_if_Won</fullName>
+    <active>true</active>
+    <description>This field is required if opp is closed Won</description>
+    <errorConditionFormula>ISPICKVAL(StageName, &quot;Closed Won&quot;) &amp;&amp;
+ISBLANK(TEXT(Why_We_Lost__c)) &amp;&amp;
+AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,RecordType.DeveloperName &lt;&gt; &apos;Partner_Opportunity&apos;)</errorConditionFormula>
+    <errorDisplayField>Why_We_Lost__c</errorDisplayField>
+    <errorMessage>Must provide a reason for Closed Won opportunities</errorMessage>
+</ValidationRule>

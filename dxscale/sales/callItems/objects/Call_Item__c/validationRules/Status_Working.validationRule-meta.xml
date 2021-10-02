@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Working</fullName>
+    <active>true</active>
+    <description>You cannot change the status to Working  if Call item status  is Not Accepted or Closed</description>
+    <errorConditionFormula>AND(
+$Setup.CallItemControlSwtich__c.Run_Validation_Rules__c,
+ISCHANGED(Status__c),  
+Text(Status__c) = &quot;Working&quot;,
+OR(TEXT(PRIORVALUE(Status__c)) = &quot;Not Accepted&quot;,
+TEXT(PRIORVALUE(Status__c)) = &quot;Closed&quot;)
+ )</errorConditionFormula>
+    <errorMessage>You cannot change the status to Working  if Call item status  is Not Accepted or Closed</errorMessage>
+</ValidationRule>

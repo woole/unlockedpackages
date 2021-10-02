@@ -1,0 +1,55 @@
+<template>
+    <div class="slds-box slds-m-top_small slds-m-bottom_small">
+        <lightning-card>
+
+
+            <h3 slot="title">
+                <lightning-icon icon-name="standard:contact" alternative-text="Contact" title="Contact" size="small">
+                </lightning-icon> {contactName}
+
+
+            </h3>
+
+            <div slot="actions">
+                <lightning-button class="slds-m-left_x-small" label="Edit" id={recordId} name='EditButton'
+                    onclick={openModal}>
+                </lightning-button>
+
+                <lightning-button class="slds-m-left_x-small" label="Next" id={recordId} name='NextButton'
+                    onclick={proceedNext}>
+                </lightning-button>
+            </div>
+
+            <lightning-record-form record-id={recordId} object-api-name={objectApiName} fields={fields} columns="2"
+                mode="readonly">
+            </lightning-record-form>
+
+        </lightning-card>
+    </div>
+
+
+    <template if:true={isModalOpen}>
+        <c-util-modal class="slds-box" data-id="AccountContacts" show-modal=true onclose={closeModal}
+            style-width-height="min-width: 900px; background: #eff9fd">
+            <div slot="header">
+                <h2 slot="header" id="modal-heading-06" class="slds-text-heading_medium slds-hyphenate">{contactName}
+                </h2>
+            </div>
+            <div slot="body">
+                <div class="slds-notify slds-notify_alert slds-alert_error slds-m-bottom_small" role="alert"
+                    if:true={warningMessage}>
+                    {warningMessage}
+                </div>
+                <lightning-record-form record-id={recordId} object-api-name={objectApiName} fields={fields} columns="2"
+                    mode="view" onsubmit={handleSubmit}>
+                </lightning-record-form>
+                <div class="slds-text-align_right">
+                    <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Close</button>
+                    <button class="slds-button slds-button_brand" onclick={proceedNext} title="OK">Create
+                        Opportunity</button>
+                </div>
+            </div>
+        </c-util-modal>
+    </template>
+
+</template>

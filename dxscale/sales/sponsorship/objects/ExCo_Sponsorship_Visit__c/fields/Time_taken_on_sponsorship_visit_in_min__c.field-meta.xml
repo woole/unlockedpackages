@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_taken_on_sponsorship_visit_in_min__c</fullName>
+    <description>Time taken on sponsorship visit (in min)
+Not added on any page layout</description>
+    <externalId>false</externalId>
+    <formula>FLOOR((End_time_of_sponsorship_visit__c - Start_time_of_sponsorship_visit__c)*24*60)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Time taken on sponsorship visit (in min)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

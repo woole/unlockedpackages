@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_Correct_License__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Use this checkbox to confirm that the associated License is the one that you wish to convert to production status.  When checked and saved it will create a Customer record and a draft Service Order record.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Use this checkbox to confirm that the associated License is the one that you wish to convert to production status.  When checked and saved it will create a Customer record and a draft Service Order record.</inlineHelpText>
+    <label>Confirm License / Create Draft Order</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

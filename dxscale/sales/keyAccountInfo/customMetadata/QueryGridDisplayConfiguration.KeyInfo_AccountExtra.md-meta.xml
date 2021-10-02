@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>KeyInfo_AccountExtra</label>
+    <protected>false</protected>
+    <values>
+        <field>JSONConfig__c</field>
+        <value xsi:type="xsd:string">{             &quot;whereClause&quot;:&quot;SalesforceAccountId__c = &quot;,             &quot;terminal&quot;:true,             &quot;fields&quot;:[                {                   &quot;api&quot;:&quot;CreditStatus__c&quot;,                   &quot;label&quot;:&quot;Credit Score&quot;,                   &quot;type&quot;:&quot;String&quot;,                   &quot;display&quot;:true                },                {                   &quot;api&quot;:&quot;AccountPassword__c&quot;,                   &quot;label&quot;:&quot;Password&quot;,                   &quot;type&quot;:&quot;String&quot;,                   &quot;display&quot;:true                },                    {                   &quot;api&quot;:&quot;HomeOrExport__c&quot;,                   &quot;label&quot;:&quot;Home Or Export&quot;,                   &quot;type&quot;:&quot;boolean&quot;,                   &quot;display&quot;:true                },                                            {                   &quot;api&quot;:&quot;SalesforceAccountId__c&quot;,                   &quot;type&quot;:&quot;id&quot;,                   &quot;display&quot;:false                }             ],             &quot;objectType&quot;:&quot;VW_Connect_AccountExtra__x&quot;          }</value>
+    </values>
+</CustomMetadata>

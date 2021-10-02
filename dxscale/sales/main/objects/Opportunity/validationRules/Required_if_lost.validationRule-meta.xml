@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Required_if_lost</fullName>
+    <active>true</active>
+    <description>This field is required if opp is closed lost</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,RecordType.DeveloperName &lt;&gt; &apos;Partner_Opportunity&apos;,
+ISPICKVAL(StageName, &quot;Closed Lost&quot;) &amp;&amp; ISBLANK(TEXT(Why_We_Lost__c)))</errorConditionFormula>
+    <errorDisplayField>Why_We_Lost__c</errorDisplayField>
+    <errorMessage>Must provide a reason for Closed Lost opportunities</errorMessage>
+</ValidationRule>

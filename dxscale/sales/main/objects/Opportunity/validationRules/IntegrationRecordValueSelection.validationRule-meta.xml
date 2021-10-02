@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IntegrationRecordValueSelection</fullName>
+    <active>true</active>
+    <description>This rule will not allow the user to select the options which are used for integration purpose</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,
+$Setup.C2O_Opportunity_Edit_Access__c.Fire_Validation_Rule__c, 
+NOT( 
+OR( ISPICKVAL(Integration_Record_Status__c , &apos;&apos;), ISPICKVAL(Integration_Record_Status__c , &apos;Do Not Send&apos;) ,ISPICKVAL(Integration_Record_Status__c , &apos;Pending - Send to Local&apos;),ISPICKVAL(Integration_Record_Status__c , &apos;Pending - Send to Local (Self)&apos;),ISPICKVAL(Integration_Record_Status__c , &apos;Pending - Send to Local (Round-Robin)&apos;) 
+) 
+) 
+)</errorConditionFormula>
+    <errorDisplayField>Integration_Record_Status__c</errorDisplayField>
+    <errorMessage>Selected value is for Integration use only, Please select a different value.</errorMessage>
+</ValidationRule>

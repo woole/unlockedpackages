@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Insights__c</fullName>
+    <description>EAD-2227: Insights into customer’s business (think of strategic and operational challenges that the business faces, what are their pain points? What problems does this business have that need to be solved?)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Insights into customer’s business (think of strategic and operational challenges that the business faces, what are their pain points? What problems does this business have that need to be solved?)[Upto 1000 characters]</inlineHelpText>
+    <label>Insights into customer&apos;s business</label>
+    <length>1000</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

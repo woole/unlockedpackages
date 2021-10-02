@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ExCo_Pain_Points_w_Current_Solution__c</fullName>
+    <description>EAD-2227: Same values from the &apos;Pain Points w/ Current Solution&apos; field on Opportunity</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Pain points with current solution</inlineHelpText>
+    <label>Pain Points w/ Current Solution</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Price too high</fullName>
+                <default>false</default>
+                <label>Price too high</label>
+            </value>
+            <value>
+                <fullName>Wanted cloud solution</fullName>
+                <default>false</default>
+                <label>Wanted cloud solution</label>
+            </value>
+            <value>
+                <fullName>Wanted monthly subscription</fullName>
+                <default>false</default>
+                <label>Wanted monthly subscription</label>
+            </value>
+            <value>
+                <fullName>Recommended to change solution</fullName>
+                <default>false</default>
+                <label>Recommended to change solution</label>
+            </value>
+            <value>
+                <fullName>Current is too difficult to use</fullName>
+                <default>false</default>
+                <label>Current is too difficult to use</label>
+            </value>
+            <value>
+                <fullName>Current software unreliable</fullName>
+                <default>false</default>
+                <label>Current software unreliable</label>
+            </value>
+            <value>
+                <fullName>Needed greater functionality</fullName>
+                <default>false</default>
+                <label>Needed greater functionality</label>
+            </value>
+            <value>
+                <fullName>Not happy with support</fullName>
+                <default>false</default>
+                <label>Not happy with support</label>
+            </value>
+            <value>
+                <fullName>After upgrade, software no longer worked</fullName>
+                <default>false</default>
+                <label>After upgrade, software no longer worked</label>
+            </value>
+            <value>
+                <fullName>End of product lifecycle</fullName>
+                <default>false</default>
+                <label>End of product lifecycle</label>
+            </value>
+            <value>
+                <fullName>Not scalable in line with business</fullName>
+                <default>false</default>
+                <label>Not scalable in line with business</label>
+            </value>
+            <value>
+                <fullName>Other (please specify)</fullName>
+                <default>false</default>
+                <label>Other (please specify)</label>
+            </value>
+            <value>
+                <fullName>Didn&apos;t integrate with 3rd party additions</fullName>
+                <default>false</default>
+                <label>Didn&apos;t integrate with 3rd party additions</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

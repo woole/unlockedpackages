@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invocation_Name__c</fullName>
+    <description>Name fo the invocation that trigger the audited service</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Name fo the invocation that trigger the audited service</inlineHelpText>
+    <label>Invocation Name</label>
+    <length>80</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

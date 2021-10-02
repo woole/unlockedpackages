@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Win_Loss_Reject_Reasons_Level1__c</fullName>
+    <description>Same as Opportunity-Win_Loss_Reject_Reasons_Level1__c</description>
+    <externalId>false</externalId>
+    <label>Win/Loss/Reject Reasons Level1</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Won From NA</fullName>
+                <default>false</default>
+                <label>Won From NA</label>
+            </value>
+            <value>
+                <fullName>Won From UK</fullName>
+                <default>false</default>
+                <label>Won From UK</label>
+            </value>
+            <value>
+                <fullName>Lost From NA</fullName>
+                <default>false</default>
+                <label>Lost From NA</label>
+            </value>
+            <value>
+                <fullName>Lost From UK</fullName>
+                <default>false</default>
+                <label>Lost From UK</label>
+            </value>
+            <value>
+                <fullName>Feature Requirement</fullName>
+                <default>false</default>
+                <label>Feature Requirement</label>
+            </value>
+            <value>
+                <fullName>Retention Conversation</fullName>
+                <default>false</default>
+                <label>Retention Conversation</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>OutSourced</fullName>
+                <default>false</default>
+                <label>OutSourced</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Global_Contact_Id_Update</fullName>
+        <description>Global Contact Id field update logic</description>
+        <field>Global_Id__c</field>
+        <formula>TEXT(VALUE(Contact_Sequence_Id__c)+2000000000)</formula>
+        <name>Global Contact Id Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Populate Global Contact Id</fullName>
+        <actions>
+            <name>Global_Contact_Id_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Contact_Sequence_Id__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Contact.Global_Id__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>This rule will auto populate the Global Contact id field value on Contact</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

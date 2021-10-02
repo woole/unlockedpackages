@@ -1,0 +1,110 @@
+<template>
+    <lightning-card title={title} icon-name="standard:related_list">
+            <template if:true={hasError}>
+                <lightning-card icon-name="utility:warning" title={state}>
+                    <lightning-layout-item size="12" padding="horizontal-small">        
+                        <span class="slds-m-right_small">Data currently unavailable</span>
+                    </lightning-layout-item>
+                </lightning-card>  
+            </template>
+
+            <!--template if:true={potentiallyMoreRows}>
+                <div class="slds-m-around_small">
+                    Large Data Alert: Returned maximum allowed rows to screen. Rerun with filters.
+                </div>
+            </template-->
+
+            <!--template if:true={potentiallyMoreRows}>
+                <div class="slds-m-around_small">
+                    <div class="slds-m-around_small">
+                        <lightning-checkbox-group name="Checkbox Group"
+                            label="Checkbox Group"
+                            options={checkBoxOptions}
+                            value={checkBoxValue}
+                            onchange={handleCheckBoxChange}>
+                        </lightning-checkbox-group>
+                    </div>
+                </div>
+            </template-->
+        <template if:false={hasError}>
+            <tempate if:true={showLoading}>
+                <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>                
+            </tempate>
+            <template if:true={hasDataToShow}>
+                <div slot="actions">
+                    <p>Showing {displayData.length} of {fullData.length} records</p>
+                </div>        
+
+                <div class="c-container slds-p-top_none">
+                    <lightning-layout multiple-rows="true">
+                        <lightning-layout-item padding="around-small" size="12">
+                            <lightning-layout>
+                                <lightning-layout-item padding="around_none" size="4">
+                                    <div class="page-section">
+                                        <span class="slds-m-right_small">Enter search text:</span>
+                                        <lightning-input 
+                                            name="input1" 
+                                            type="text" variant="label-hidden"
+                                            placeholder="search..."  
+                                            maxlength="20"
+                                            value={searchTerm} onchange={handleSearchChange}></lightning-input>
+                                    </div>
+                                </lightning-layout-item>
+                                <template if:true={hasSearchFilters}>
+                                    <lightning-layout-item padding="around_none" size="4">
+                                        <div class="page-section">
+                                            <h2>Filter:</h2>
+                                            <lightning-button-group class="searchFilters">
+                                                <template for:each={searchFilter} for:item="searchItem">
+                                                    <lightning-button data-id={searchItem.searchText} name={searchItem.searchText} label={searchItem.label} key={searchItem.searchText} onload={checkStyles}
+                                                    onclick={handleSearchFilterChange}></lightning-button>    
+                                                </template>
+                                            </lightning-button-group>                    
+                                        </div>
+                                    </lightning-layout-item>
+                                </template> 
+                                <template if:true={hasFilterOptions}>
+                                    <lightning-layout-item padding="around_none" size="4">
+                                        <div class="page-section">
+                                            <h2>{filteringWords}</h2>
+                                            <lightning-button-group >
+                                                <template for:each={filterOptions} for:item="filterItem">
+                                                    <lightning-button data-id={filterItem.value} name={filterItem.value} label={filterItem.label} key={filterItem.value} 
+                                                    variant="brand" onclick={handleButtonChange} id={filterItem.value}></lightning-button>    
+                                                </template>
+                                            </lightning-button-group>                    
+                                    </div>
+                    
+                                    <div class="slds-m-around_small">
+                                        <lightning-button data-id="apply-button" disabled onclick={handleClick} label="Apply Filter"></lightning-button>
+                                    </div>
+                                </lightning-layout-item>
+                                </template>                            
+                            </lightning-layout>
+                        </lightning-layout-item>
+                    </lightning-layout>
+                </div>            
+                
+                <div style={tableStyle} class={tableClassName}>
+                    <lightning-datatable
+                            key-field="name"
+                            data={displayData}
+                            columns={columns}
+                            onsort={updateColumnSorting}
+                            sorted-by={sortedBy} 
+                            sorted-direction={sortedDirection}>
+                        >
+                    </lightning-datatable>
+                </div>
+                
+            </template>
+            <tempate if:false={showLoading}>
+                <tempate if:false={hasDataToShow}>
+                    <lightning-card icon-name="custom:custom12" title="No records">
+                    </lightning-card>                  
+                </tempate>
+            </tempate>
+        </template>
+
+    </lightning-card>    
+</template>

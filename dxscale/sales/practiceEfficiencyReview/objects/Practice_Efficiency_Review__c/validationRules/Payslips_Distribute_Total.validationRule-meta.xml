@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payslips_Distribute_Total</fullName>
+    <active>true</active>
+    <description>Question 18: Total of Percentage of all distribute payslips options should be less than or equal 100%.</description>
+    <errorConditionFormula>OR( Payslips_Distribute_Total__c &gt; 1.0,
+Payslips_Distribute_Total__c  &lt; 0.0
+)</errorConditionFormula>
+    <errorMessage>Question 18: Total of Percentage of all distribute payslips options should be less than or equal 100%.</errorMessage>
+</ValidationRule>

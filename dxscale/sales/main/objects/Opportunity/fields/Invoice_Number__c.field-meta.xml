@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invoice_Number__c</fullName>
+    <description>ENHC0011018-Add &quot;Invoice Number&quot; field to Opportunity. Free Text field for Enterprise Sales</description>
+    <externalId>false</externalId>
+    <label>Invoice Number</label>
+    <length>25</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

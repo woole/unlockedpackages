@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Name__c</fullName>
+    <description>Name of the Service, an implementation of which we are looking to invoke. Note that we use the Service name rather than a lookup as the Service may not be configured in all environments, in which case a stub method should be used.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Name of the Service, an implementation of which we are looking to invoke. Note that we use the Service name rather than a lookup as the Service may not be configured in all environments, in which case a stub method should be used.</inlineHelpText>
+    <label>Service Name</label>
+    <length>40</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

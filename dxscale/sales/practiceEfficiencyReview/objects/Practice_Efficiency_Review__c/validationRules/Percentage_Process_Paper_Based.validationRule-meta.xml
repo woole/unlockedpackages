@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percentage_Process_Paper_Based</fullName>
+    <active>true</active>
+    <description>Percentage must be between 0 and 100%.</description>
+    <errorConditionFormula>OR( Percentage_Process_Paper_Based__c &gt; 1.0,
+Percentage_Process_Paper_Based__c  &lt; 0.0
+)</errorConditionFormula>
+    <errorDisplayField>Percentage_Process_Paper_Based__c</errorDisplayField>
+    <errorMessage>Percentage Process Paper Based must be between 0 and 100%.</errorMessage>
+</ValidationRule>

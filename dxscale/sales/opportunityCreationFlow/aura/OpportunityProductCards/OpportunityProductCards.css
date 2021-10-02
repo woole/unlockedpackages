@@ -1,0 +1,21 @@
+.THIS {
+
+}
+    
+.THIS.slds-modal__container{
+    max-width: 70rem !important;
+    width:100% !important;
+}
+
+.THIS .custom-box {
+    background-color: #FFFFFF;
+    border-width: 2px;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+
+.THIS .save-button {
+    margin:0 auto;
+    display:block;
+}

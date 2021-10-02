@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ProductAllocationGroupAD__c</fullName>
+    <externalId>false</externalId>
+    <description>EAD-2355 filter the flow New Customer Call - Accountant since SF not allow BEGIN* option</description>    
+    <formula>OR(
+BEGINS(TEXT(Product_Allocation_Group__c ),&quot;AD&quot;),
+BEGINS(TEXT(Product_Allocation_Group__c ),&quot;G&quot;)
+)</formula>
+    <label>ProductAllocationGroupAD</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

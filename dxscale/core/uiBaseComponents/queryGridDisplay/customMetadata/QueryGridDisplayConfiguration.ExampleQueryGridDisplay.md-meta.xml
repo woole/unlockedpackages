@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ExampleQueryGridDisplay</label>
+    <protected>false</protected>
+    <values>
+        <field>JSONConfig__c</field>
+        <value xsi:type="xsd:string">{&quot;queryJSON&quot;:{&quot;objectLevels&quot;:[{&quot;limitRows&quot;:7,&quot;whereClause&quot;:&quot;accountid = &quot;,&quot;orderByClause&quot;:&quot;name&quot;,&quot;terminal&quot;:true,&quot;fields&quot;:[{&quot;api&quot;:&quot;name&quot;,&quot;label&quot;:&quot;Product&quot;,&quot;type&quot;:&quot;String&quot;,&quot;sortable&quot;:true,&quot;display&quot;:true},{&quot;api&quot;:&quot;phone&quot;,&quot;label&quot;:&quot;Phone&quot;,&quot;type&quot;:&quot;phone&quot;,&quot;display&quot;:true},{&quot;api&quot;:&quot;quantity&quot;,&quot;label&quot;:&quot;Quantity&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;sortable&quot;:true,&quot;display&quot;:true},{&quot;api&quot;:&quot;amount&quot;,&quot;label&quot;:&quot;Price&quot;,&quot;type&quot;:&quot;currency&quot;,&quot;display&quot;:true},{&quot;api&quot;:&quot;createddate&quot;,&quot;label&quot;:&quot;Created Date&quot;,&quot;type&quot;:&quot;date&quot;,&quot;sortable&quot;:true,&quot;display&quot;:true},{&quot;api&quot;:&quot;accountid&quot;,&quot;type&quot;:&quot;id&quot;,&quot;display&quot;:false}],&quot;objectType&quot;:&quot;Sales_History__c&quot;}]}}</value>
+    </values>
+</CustomMetadata>

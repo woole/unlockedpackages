@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_to_Collect__c</fullName>
+    <description>EAD-1251 Collections Enhancements for Call Items (Sales Opps agreed they would updated this information when lists are being loaded)</description>
+    <externalId>false</externalId>
+    <label>Amount to Collect</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

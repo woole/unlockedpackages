@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Inactive__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field is used to identify contacts who no longer need to be referenced on a customers account both Salesforce and will be synced from Local CRM</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Mark as &quot;inactive&quot; contacts that are duplicates, left the company, need to be deleted</inlineHelpText>
+    <label>Inactive</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

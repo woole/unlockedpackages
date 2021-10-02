@@ -1,0 +1,2 @@
+public with sharing class ValidationException extends Exception {
+}

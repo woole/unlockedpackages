@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TCV_Field_Mandatory</fullName>
+    <active>true</active>
+    <description>CCORE-1433   Make ACV, ASB, TCV mandatory: Exception if Product selected is “professional services” This is to be mandatory from the stage &apos;Confirming Value&apos; onwards,</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,$Profile.Name = &quot;Sage: Global Sales User&quot;,RecordType.Name != &apos;Small Opportunity&apos;,RecordType.DeveloperName &lt;&gt; &apos;Partner_Opportunity&apos;,NOT(ISPICKVAL(Product__c,&quot;Professional Services&quot;))
+,OR(ISNULL(Total_Contract_Value_TCV__c), Total_Contract_Value_TCV__c &lt;= 0), 
+OR(ISNULL(Annual_recurring_ACV_rollup__c), Annual_recurring_ACV_rollup__c &lt;= 0),
+OR(
+    ISPICKVAL(StageName,&quot;Confirming Value&quot;) ,ISPICKVAL(StageName,&quot;Selection&quot;),ISPICKVAL(StageName,&quot;Closed Won&quot;))      )</errorConditionFormula>
+    <errorMessage>TCV &amp; ACV is mandatory from the confirming value stage</errorMessage>
+</ValidationRule>

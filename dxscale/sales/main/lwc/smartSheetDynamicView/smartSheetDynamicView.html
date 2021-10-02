@@ -1,0 +1,23 @@
+<!-- 
+* @author      : Veni Korapaty
+* @version     : 1.0
+* @since       : 2020-11-18
+* @description :  Used for Smartsheet to display the URL to Login and Fields On Opportunity Object
+-->
+
+<template>
+
+    <lightning-record-view-form record-id={recordId} object-api-name={objectApiName} density="compact">
+        <div class="slds-p-around_medium">
+            <lightning-output-field field-name='Order_Status__c'>
+            </lightning-output-field>
+        </div>
+        <div class="slds-p-around_medium">
+            <p>
+                <lightning-formatted-url value={smartSheetURL} tooltip="Smartsheet Login URL" target="_blank">
+                </lightning-formatted-url>
+            </p>
+        </div>
+
+    </lightning-record-view-form>
+</template>

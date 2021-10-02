@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payroll_Distribute_Other</fullName>
+    <active>true</active>
+    <description>Percentage must be between 0 and 100%.</description>
+    <errorConditionFormula>OR( Payroll_Distribute_Info_Other__c &gt; 1.0,
+Payroll_Distribute_Info_Other__c  &lt; 0.0
+)</errorConditionFormula>
+    <errorDisplayField>Payroll_Distribute_Info_Other__c</errorDisplayField>
+    <errorMessage>OtherPercentage must be between 0 and 100%.</errorMessage>
+</ValidationRule>

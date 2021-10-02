@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NewStaff__c</fullName>
+    <description>How many new staff do you intend to hire in the next 12 months?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How many new staff do you intend to hire in the next 12 months?</inlineHelpText>
+    <label>New staff in the next 12 months?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>We&apos;ve reduced headcount</fullName>
+                <default>false</default>
+                <label>We&apos;ve reduced headcount</label>
+            </value>
+            <value>
+                <fullName>Stayed the same</fullName>
+                <default>false</default>
+                <label>Stayed the same</label>
+            </value>
+            <value>
+                <fullName>1 to 5</fullName>
+                <default>false</default>
+                <label>1 to 5</label>
+            </value>
+            <value>
+                <fullName>6 to 10</fullName>
+                <default>false</default>
+                <label>6 to 10</label>
+            </value>
+            <value>
+                <fullName>11+</fullName>
+                <default>false</default>
+                <label>11+</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

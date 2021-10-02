@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Duration__c</fullName>
+    <description>Service Durationn in milliseconds. This is the time that the service runs for, in the case of an async invocation this does not include any enqueued time but is the time that the service method takes to run</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Service Durationn in milliseconds. This is the time that the service runs for, in the case of an async invocation this does not include any enqueued time but is the time that the service method takes to run</inlineHelpText>
+    <label>Service Duration (ms)</label>
+    <precision>8</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

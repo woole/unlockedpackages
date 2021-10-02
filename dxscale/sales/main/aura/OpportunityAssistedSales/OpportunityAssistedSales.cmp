@@ -1,0 +1,110 @@
+<aura:component implements="force:hasRecordId,lightning:availableForFlowScreens,force:lightningQuickAction" 
+                access="global" 
+                controller="AssistedSalesController">
+    
+    <aura:attribute name="recordId" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="LocaleInfoMissing" type="Boolean" />
+    <aura:attribute name="ContactRoleMissing" type="Boolean" />
+    <aura:attribute name="ascInfo" type="AssistedSalesController.AssistedSalesController_d"/>
+    
+    <div aura:id="LoadingMsg" class="slds-show custom-box">
+        <lightning:card title="Loading" iconName="standard:generic_loading">
+            <lightning:layout>
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:spinner alternativeText="Loading" />
+                    <lightning:formattedText value="Loading..." />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:card>
+    </div>
+    
+    <div aura:id="ErrorMessages" class="slds-hide">
+        <aura:if isTrue="{!not(empty(v.ascInfo.errorList))}">
+            <lightning:card title="Opportunity Changes Required" iconName="utility:warning">
+                <lightning:layout>
+                    <lightning:layoutItem padding="around-small">
+                        <lightning:formattedText value="Please consider the following if you wish to use the Assisted Sales UI:" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <lightning:layout>
+                    <lightning:layoutItem padding="around-small">
+                        <aura:iteration items="{!v.ascInfo.errorList}" var="message">
+                        	<li>{!message}</li>
+                        </aura:iteration>    
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:card>
+        </aura:if>
+        <aura:if isTrue="{!empty(v.ascInfo.errorList)}">
+            <lightning:card title="Error Detected" iconName="utility:warning">
+                <lightning:layout>
+                    <lightning:layoutItem size="12" padding="around-small">
+                        <lightning:formattedText value="Unable to access Assisted Sales." />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:card>
+        </aura:if>
+    </div>
+
+    <div aura:id="LoadingLocaleInfo" class="slds-hide">
+        <aura:if isTrue="{!v.LocaleInfoMissing}">
+            <lightning:card title="Please fill the Locale and SalesOffice in order to proceed further"
+                iconName="utility:warning">
+                <lightning:layout>
+                    <lightning:layoutItem padding="around-small">
+                        <p style="font-size:12px; color:red;"> * Please Choose Locale as <b style="color:green">'en_GB'</b>
+                            for Country <b style="color:green">'UK'</b> and <b style="color:green">'en_IE'</b> for
+                            country <b style="color:green">'IE'</b></p>
+                        <p style="font-size:12px; color:red;"> * Please Choose Locale as <b style="color:green">'en_CA/fr_CA'</b> for
+                            country <b style="color:green">'CA'</b></p>
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <lightning:layout>
+                    <lightning:layoutItem padding="around-small">
+                        <lightning:select aura:id="selectLocale" name="select" label="Please choose Locale"
+                            required="true" messageWhenValueMissing="Locale is mandatory please choose value">
+                            <option value="">--None--</option>
+                            <option value="en_GB">en_GB</option>
+                            <option value="en_IE">en_IE</option>
+                            <option value="en_CA">en_CA</option>
+                            <option value="fr_CA">fr_CA</option>
+                        </lightning:select>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem padding="around-small">
+                        <lightning:select aura:id="selectSalesOffice" name="select" label="Please choose SalesOffice"
+                            required="true" messageWhenValueMissing="Salesoffice is mandatory please choose value">
+                            <option value="">--None--</option>
+                            <option value="Dublin CBC">Dublin CBC</option>
+                            <option value="Atlanta CBC">Atlanta CBC</option>
+                            <option value="Canada CBC">Canada CBC</option>
+                        </lightning:select>
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <lightning:layout>
+                    <lightning:layoutItem padding="around-small">
+                        <lightning:button variant="brand" label="Submit" onclick="{!c.handleAccountSave}" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:card>
+        </aura:if>
+        <aura:if isTrue="{!v.ContactRoleMissing}">
+            <lightning:card title="Please click the submit button in order to proceed further"
+                iconName="utility:warning">
+                <lightning:layout>
+                    <lightning:layoutItem padding="around-small">
+                        <p style="font-size:13px;"> * Please make sure the opportunity has at least one contact role </p>
+                        <p style="font-size:13px;"> * Click the <b style="color:#6a5acd;">Submit</b> button to populate the BillTo/SellTo Contact Roles </p>
+                        <p style="font-size:13px;"> * You will need to manually add the contact roles where BillTO / SellTo relate to different contacts </p>
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <lightning:layout>
+                    <lightning:layoutItem padding="around-small">
+                        <lightning:button variant="brand" label="Submit" onclick="{!c.handleContactRoleSave}" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:card>
+        </aura:if>
+    </div>
+    
+</aura:component>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>KeyInfo_AccountCustInteraction1</label>
+    <protected>false</protected>
+    <values>
+        <field>JSONConfig__c</field>
+        <value xsi:type="xsd:string">{            &quot;whereClause&quot;:&quot;InteractionCategory__c = &#39;Case&#39; AND SalesforceAccountId__c = &quot;,            &quot;terminal&quot;:true,            &quot;fields&quot;:[               {                  &quot;api&quot;:&quot;SalesforceAccountId__c&quot;,                  &quot;label&quot;:&quot;SFDC id&quot;,                  &quot;type&quot;:&quot;String&quot;,                  &quot;display&quot;:true               }            ],            &quot;objectType&quot;:&quot;VW_Connect_CustomerInteraction__x&quot;         }</value>
+    </values>
+</CustomMetadata>

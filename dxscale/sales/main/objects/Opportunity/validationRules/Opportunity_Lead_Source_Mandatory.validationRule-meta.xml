@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Lead_Source_Mandatory</fullName>
+    <active>true</active>
+    <description>Opportunity/Lead source is mandatory for all non sysadmin and integration profiles.</description>
+    <errorConditionFormula>AND( 
+   $Setup.OpportunityControlSwitch__c.RunValidationRules__c,
+   ISBLANK(TEXT(Lead_Source__c))
+)</errorConditionFormula>
+    <errorMessage>Please enter a Opportunity/Lead Source</errorMessage>
+</ValidationRule>

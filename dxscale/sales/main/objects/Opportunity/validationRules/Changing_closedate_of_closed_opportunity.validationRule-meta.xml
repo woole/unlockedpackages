@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Changing_closedate_of_closed_opportunity</fullName>
+    <active>true</active>
+    <description>Only administrators and those with a sales ops permission set can change the close date of closed opportunity -CCORE-2244</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,AND(ISCHANGED(CloseDate), TODAY()-PRIORVALUE(CloseDate)&gt;30),OR(Text(PRIORVALUE(StageName)) = &quot;Closed Won&quot;,Text(PRIORVALUE(StageName)) = &quot;Closed Lost&quot;,Text(PRIORVALUE(StageName)) = &quot;Rejected&quot;), NOT($Permission.Global_Sales_Operations),NOT($Permission.Bypass_Changing_CloseDate_Of_Closed_Opportunity_Validation),NOT($Profile.Name =&apos;System Administrator&apos;))</errorConditionFormula>
+    <errorMessage>Please contact System administrators or Sales Operation team to change the closed date of closed opportunity.</errorMessage>
+</ValidationRule>

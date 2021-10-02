@@ -1,0 +1,20 @@
+<template>
+    <lightning-card
+        title="Republsh Information"
+        icon-name="standard:contact"
+    >
+
+    <div class="slds-m-around_small">
+        <lightning-input name="inputMessage" value={inputMessage} onchange={handleChange}></lightning-input> 
+    </div>
+    <div class="slds-m-around_small">
+        <lightning-button onclick={handleClick} label="Resubmit"></lightning-button>
+    </div>
+
+    <div class="slds-m-around_small">
+        <p style={textColor}>{returnMessage}</p>
+    </div>        
+
+
+    </lightning-card>
+</template>

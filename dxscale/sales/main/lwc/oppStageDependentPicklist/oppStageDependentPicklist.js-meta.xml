@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>47.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Opportunity Stage Dependent Component</masterLabel>
+    <description>Opportunity Stage Dependent Component</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="selectedStageFlow" type="String"/>
+            <property name="selectedWinLossRejectReasonFlow" type="String"/>
+            <property name="selectedWinLossRejectLevel1Flow" type="String"/>
+            <property name="selectedWinLossRejectLevel2Flow" type="String"/>
+            <property name="selectedWinLossRejectLevel3Flow" type="String"/>
+            <property name="selectedWinLossRejectCommentsFlow" type="String"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

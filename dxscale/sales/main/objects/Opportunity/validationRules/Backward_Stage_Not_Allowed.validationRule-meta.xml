@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Backward_Stage_Not_Allowed</fullName>
+    <active>true</active>
+    <description>Prevents sales reps from changing opportunity sales stage to any other stages if opportunity is in Closed Won or Closed Lost</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,RecordType.DeveloperName &lt;&gt; &apos;Partner_Opportunity&apos;,
+   NOT($Permission.Bypass_Opportunity_Close_Validation), 
+   $Profile.Name &lt;&gt; &apos;System Administrator&apos;, 
+   ISCHANGED(StageName), 
+   OR( 
+      TEXT(PRIORVALUE(StageName)) = $Label.Opportunity_Sales_Stages_Closed_Won, 
+      TEXT(PRIORVALUE(StageName)) = $Label.Opportunity_Sales_Stages_Closed_Lost 
+       ) 
+   )</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>You attempted to change to an opportunity status which would re-open a closed opportunity, which is not allowed. Please open a service ticket to have this opportunity reopened.</errorMessage>
+</ValidationRule>

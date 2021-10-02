@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Full_Service</fullName>
+    <columns>MasterLabel</columns>
+    <columns>DeveloperName</columns>
+    <columns>NamespacePrefix</columns>
+    <columns>Service_Type__c</columns>
+    <columns>Status__c</columns>
+    <columns>Extensible__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Full Service</label>
+</ListView>

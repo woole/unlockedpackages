@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Active_Call_Items</fullName>
+    <columns>Call_List_Name__c</columns>
+    <columns>NAME</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Hint__c</columns>
+    <columns>Status__c</columns>
+    <columns>Attempted_Calls__c</columns>
+    <columns>isOpenedByOwner__c</columns>
+    <columns>Target_Finish_Date__c</columns>
+    <columns>Campaign__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Visibility_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Missing Contact,To Be Actioned,Working</value>
+    </filters>
+    <label>My Active Call Items</label>
+    <sharedTo>
+        <group>Call_List_Sales_Users</group>
+    </sharedTo>
+</ListView>

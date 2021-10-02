@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Event template">
+    <aura:attribute type="List" default="[]" name="SuccessGoalValue"/>
+    <aura:attribute type="List" default="[]" name="SuccessGoalValuetwo"/>
+</aura:event>

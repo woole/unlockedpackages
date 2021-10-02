@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Reasons__c</fullName>
+    <externalId>false</externalId>
+    <label>Status Reasons</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>AD - Collections - Contact Made - Debt Not Cleared - De-link notification sent</fullName>
+                <default>false</default>
+                <label>AD - Collections - Contact Made - Debt Not Cleared - De-link notification sent</label>
+            </value>
+            <value>
+                <fullName>AD - Collections - No Contact Made - Canx Sub - De-link notification sent</fullName>
+                <default>false</default>
+                <label>AD - Collections - No Contact Made - Canx Sub - De-link notification sent</label>
+            </value>
+            <value>
+                <fullName>Already Actioned</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Already Actioned</label>
+            </value>
+            <value>
+                <fullName>Archived</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Archived</label>
+            </value>
+            <value>
+                <fullName>BP - Collections - Contact Made - Debt Not Cleared - Cancellation notification sent</fullName>
+                <default>false</default>
+                <label>BP - Collections - Contact Made - Debt Not Cleared - Cancellation notification sent</label>
+            </value>
+            <value>
+                <fullName>BP - Collections - No Contact Made - Canx Sub - Cancelation notification sent</fullName>
+                <default>false</default>
+                <label>BP - Collections - No Contact Made - Canx Sub - Cancelation notification sent</label>
+            </value>
+            <value>
+                <fullName>Cancelled Subs – Debt Cleared</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cancelled Subs – Debt Cleared</label>
+            </value>
+            <value>
+                <fullName>Cancelled Subs – Debt Outstanding</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Cancelled Subs – Debt Outstanding</label>
+            </value>
+            <value>
+                <fullName>Collections - Cancelled Subs - Debt Cleared</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Collections - Cancelled Subs - Debt Cleared</label>
+            </value>
+            <value>
+                <fullName>Collections - Cancelled Subs – Debt Cleared</fullName>
+                <default>false</default>
+                <label>Collections - Cancelled Subs – Debt Cleared</label>
+            </value>
+            <value>
+                <fullName>Collections - Cancelled Subs - Debt Outstanding</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Collections - Cancelled Subs - Debt Outstanding</label>
+            </value>
+            <value>
+                <fullName>Collections - Cancelled Subs – Debt Outstanding</fullName>
+                <default>false</default>
+                <label>Collections - Cancelled Subs – Debt Outstanding</label>
+            </value>
+            <value>
+                <fullName>Collections - Contact Made - Debt Cleared - Payment Holiday</fullName>
+                <default>false</default>
+                <label>Collections - Contact Made - Debt Cleared - Payment Holiday</label>
+            </value>
+            <value>
+                <fullName>Collections - Contact Made - Debt Cleared - Sub Active</fullName>
+                <default>false</default>
+                <label>Collections - Contact Made - Debt Cleared - Sub Active</label>
+            </value>
+            <value>
+                <fullName>Collections - Not Contact - Cont. Debt chased</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Collections - Not Contact - Cont. Debt chased</label>
+            </value>
+            <value>
+                <fullName>Collections - Not Contact – Cont. Debt chased</fullName>
+                <default>false</default>
+                <label>Collections - Not Contact – Cont. Debt chased</label>
+            </value>
+            <value>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competitor</label>
+            </value>
+            <value>
+                <fullName>Customer happy with current solution</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Customer happy with current solution</label>
+            </value>
+            <value>
+                <fullName>Customer Opt Out or Telephone Preference Service</fullName>
+                <default>false</default>
+                <label>Customer Opt Out or Telephone Preference Service</label>
+            </value>
+            <value>
+                <fullName>Data cleanse / Call Complete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Data cleanse / Call Complete</label>
+            </value>
+            <value>
+                <fullName>Data Team - Cleanse/ Call Complete</fullName>
+                <default>false</default>
+                <label>Data Team - Cleanse/ Call Complete</label>
+            </value>
+            <value>
+                <fullName>Duplicate Account</fullName>
+                <default>false</default>
+                <label>Duplicate Account</label>
+            </value>
+            <value>
+                <fullName>Functionality</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Functionality</label>
+            </value>
+            <value>
+                <fullName>Incorrect Segment</fullName>
+                <default>false</default>
+                <label>Incorrect Segment</label>
+            </value>
+            <value>
+                <fullName>Missing Information</fullName>
+                <default>false</default>
+                <label>Missing Information</label>
+            </value>
+            <value>
+                <fullName>No Longer Trading</fullName>
+                <default>false</default>
+                <label>No Longer Trading</label>
+            </value>
+            <value>
+                <fullName>No Opportunity</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Opportunity</label>
+            </value>
+            <value>
+                <fullName>Not Contact – Cont Debt chased</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Contact – Cont Debt chased</label>
+            </value>
+            <value>
+                <fullName>Outsourcing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Outsourcing</label>
+            </value>
+            <value>
+                <fullName>Passed to alternative channel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Passed to alternative channel</label>
+            </value>
+            <value>
+                <fullName>Price</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Price</label>
+            </value>
+            <value>
+                <fullName>Purchase in Alternate Channel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Purchase in Alternate Channel</label>
+            </value>
+            <value>
+                <fullName>Recent Valid Call</fullName>
+                <default>false</default>
+                <label>Recent Valid Call</label>
+            </value>
+            <value>
+                <fullName>Renewal at Risk</fullName>
+                <default>false</default>
+                <label>Renewal at Risk</label>
+            </value>
+            <value>
+                <fullName>Sale Made</fullName>
+                <default>false</default>
+                <label>Sale Made</label>
+            </value>
+            <value>
+                <fullName>Sales Ops - Archived</fullName>
+                <default>false</default>
+                <label>Sales Ops - Archived</label>
+            </value>
+            <value>
+                <fullName>SBC – Education Account</fullName>
+                <default>false</default>
+                <label>SBC – Education Account</label>
+            </value>
+            <value>
+                <fullName>SBC – Invalid Account</fullName>
+                <default>false</default>
+                <label>SBC – Invalid Account</label>
+            </value>
+            <value>
+                <fullName>Unsuccessful Contacting Customer</fullName>
+                <default>false</default>
+                <label>Unsuccessful Contacting Customer</label>
+            </value>
+            <value>
+                <fullName>Welcome/Proactive - Call Complete</fullName>
+                <default>false</default>
+                <label>Welcome/Proactive - Call Complete</label>
+            </value>
+            <value>
+                <fullName>Welcome / Proactive Call Complete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Welcome / Proactive Call Complete</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Not Accepted</controllingFieldValue>
+            <valueName>Customer Opt Out or Telephone Preference Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Accepted</controllingFieldValue>
+            <valueName>Duplicate Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Accepted</controllingFieldValue>
+            <valueName>Incorrect Segment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Accepted</controllingFieldValue>
+            <valueName>Missing Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Accepted</controllingFieldValue>
+            <valueName>No Longer Trading</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Accepted</controllingFieldValue>
+            <valueName>Recent Valid Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Accepted</controllingFieldValue>
+            <valueName>SBC – Education Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Not Accepted</controllingFieldValue>
+            <valueName>SBC – Invalid Account</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>AD - Collections - Contact Made - Debt Not Cleared - De-link notification sent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>AD - Collections - No Contact Made - Canx Sub - De-link notification sent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>BP - Collections - Contact Made - Debt Not Cleared - Cancellation notification sent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>BP - Collections - No Contact Made - Canx Sub - Cancelation notification sent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Collections - Cancelled Subs – Debt Cleared</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Collections - Cancelled Subs – Debt Outstanding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Collections - Contact Made - Debt Cleared - Payment Holiday</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Collections - Contact Made - Debt Cleared - Sub Active</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Collections - Not Contact – Cont. Debt chased</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Data Team - Cleanse/ Call Complete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Sale Made</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Sales Ops - Archived</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Unsuccessful Contacting Customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Closed</controllingFieldValue>
+            <valueName>Welcome/Proactive - Call Complete</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

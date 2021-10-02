@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hours_Per_Client__c</fullName>
+    <description>How much time on average do you spend obtaining, chasing and processing the manual records per client per year? (hours)  [up to 5 digits]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How much time on average do you spend obtaining, chasing and processing the manual records per client per year? (hours) [up to 5 digits]</inlineHelpText>
+    <label>Hours Per Client</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

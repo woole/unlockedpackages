@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" controller="CallItemActivityCountLTCtrl" access="global">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="recordId" type="String" />
+
+    <!-- HANDLERS -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+
+    <!-- COMPONENT MARKUP -->
+    <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Call_Item__c">
+        <article class="slds-card">
+            <div class="slds-card__header slds-grid">
+                <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                    <lightning:icon iconName="standard:call" />
+                    <div class="slds-media__body" style="display: inherit;">
+                        <h2 class="slds-card__header-title slds-m-horizontal_x-small">Number of calls:</h2>
+                        <lightning:outputField fieldName="Attempted_Calls__c" variant="label-hidden" />
+                    </div>
+                </header>
+            </div>
+        </article>
+    </lightning:recordViewForm>
+</aura:component>

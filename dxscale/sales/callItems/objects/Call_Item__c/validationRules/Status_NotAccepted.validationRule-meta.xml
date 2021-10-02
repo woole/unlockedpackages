@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_NotAccepted</fullName>
+    <active>false</active>
+    <description>Status Reason is mandatory when the status is changed to Not Accepted</description>
+    <errorConditionFormula>AND(
+$Setup.CallItemControlSwtich__c.Run_Validation_Rules__c, 
+ISCHANGED(Status__c),  
+Text(Status__c) = &quot;Not Accepted&quot;,
+ISBLANK(Text( Status_Reasons__c)) 
+ )</errorConditionFormula>
+    <errorDisplayField>Account__c</errorDisplayField>
+    <errorMessage>Status Reason is mandatory when the status is changed to Not Accepted,</errorMessage>
+</ValidationRule>

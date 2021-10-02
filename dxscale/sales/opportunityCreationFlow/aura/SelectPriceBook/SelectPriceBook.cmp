@@ -1,0 +1,13 @@
+<aura:component implements="force:appHostable,force:hasRecordId,lightning:availableForFlowScreens"
+controller="SelectPriceBookLTCtrl"   >
+    <aura:attribute name="options" type="Pricebook2[]" access="PRIVATE"/>
+    <aura:attribute name="selectedValue" type="String" access="global"/>
+    <aura:attribute name="currencyIsoCode" type="String" access="global"/>
+    <aura:attribute name="excludedPriceBookNames" type="String" access="global"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />   
+   <lightning:select name="pb_opt" label="Pricebook" aura:id="pb_opt" value="{!v.selectedValue}">
+        <aura:iteration items="{!v.options}" var="option">
+            <option text="{!option.Name}" value="{!option.Id}" selected = "true"/>
+        </aura:iteration>
+    </lightning:select>
+</aura:component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percentage_Process_Paper_Based__c</fullName>
+    <description>How many clients provide you with paper-based records to process eg bank statements? [% scale 0-100]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How many clients provide you with paper-based records to process eg bank statements? [% scale 0-100]</inlineHelpText>
+    <label>Percentage Process Paper Based</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

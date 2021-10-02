@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supports_Async__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if the Method supports asynchronous calls</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Checked if the Method supports asynchronous calls</inlineHelpText>
+    <label>Supports Async</label>
+    <type>Checkbox</type>
+</CustomField>

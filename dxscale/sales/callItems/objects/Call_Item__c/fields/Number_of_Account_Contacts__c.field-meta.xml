@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Account_Contacts__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>Number of callable contacts on the Account
+JIRA-CCORE-1653</description>
+    <externalId>false</externalId>
+    <label>Number of Account Contacts</label>
+    <precision>3</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

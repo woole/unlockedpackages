@@ -1,0 +1,73 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:lightningQuickAction" 
+                controller="ProductHoldingSearchController" 
+                access="global" >
+    
+    <aura:attribute name="searchText" type="String" default=""/>
+    <aura:attribute name="rowsToLoad" type="Integer" default="20"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <lightning:utilityBarAPI aura:id="utilitybar" />
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    
+    <div class="slds-form-element slds-lookup" data-select="single">
+        <div class="slds-form-element__control">
+            <lightning:layout>
+                <lightning:layoutItem size="6">
+                    <lightning:input type="text" label="Search Text" value="{!v.searchText}" class="slds-lookup__search-input slds-input"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem size="3" >
+                    <lightning:input type="number" label="Rows to retrieve" value="{!v.rowsToLoad}" class="slds-lookup__search-input slds-input" />
+                </lightning:layoutItem>
+                <lightning:layoutItem padding="around-large">
+                    <lightning:buttonIcon iconName="utility:search" size="large" variant="bare" onclick="{! c.handleClickX }" alternativeText="Search" class="slds-input__icon" />
+                </lightning:layoutItem>
+            </lightning:layout>            
+        </div>
+    </div>
+
+    <div aura:id="DataLoading" class="slds-hide custom-box">
+        <lightning:card title="{! v.label }" iconName="utility:spinner">
+            <lightning:layout>
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:formattedText value="{! v.label + ' ... Loading data ...' }" />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:card>
+    </div>
+    
+	<div aura:id="DataUnavailable" class="slds-hide custom-box">
+        <lightning:card title="{! v.label }" iconName="utility:offline">
+            <lightning:layout>
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:formattedText value="{! v.label + ' Data not available' }" />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:card>
+    </div>
+    
+    <div aura:id="DataAvailable" class="slds-hide custom-box">
+        <div style="height: 300px">
+            <aura:if isTrue="{!empty(v.data)}">
+                <lightning:card title="{! v.label }" iconName="utility:table">
+                    <lightning:layout>
+                        <lightning:layoutItem size="12" padding="around-small">
+                            <lightning:formattedText value="{! v.label + ' No rows returned with Account records' }" />
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </lightning:card>
+            </aura:if>
+            <aura:if isTrue="{!not(empty(v.data))}">
+                <lightning:datatable
+                    keyField="SerialNumber"
+                    data="{! v.data }"
+                    columns="{! v.columns }"
+                    hideCheckboxColumn="true"
+                    onrowaction="{! c.handleRowAction }"
+            	/>
+            </aura:if>
+        </div>
+    </div>
+ 
+</aura:component>

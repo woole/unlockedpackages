@@ -1,0 +1,5 @@
+<design:component >
+    <design:attribute name="selectedValue" label="Selected Pricebook Salesforce Id" default="abc" description="Selected Pricebook Salesforce Id" />
+    <design:attribute name="currencyIsoCode" label="CurrencyIsoCode" default="edf" description="CurrencyIsoCode" />
+    <design:attribute name="excludedPriceBookNames" label="Excluded Pricebook Names" default="AME Pricebook" description="List of excluded PriceBook Names" />
+</design:component>

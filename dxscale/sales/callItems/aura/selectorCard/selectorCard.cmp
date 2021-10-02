@@ -1,0 +1,96 @@
+<aura:component controller="ContactSelectorLTCtrl" description="Display fields of passed object and selected fields in field set">
+    <!-- ATTRIBUTES -->
+    <aura:attribute name="iObject" access="public" type="Object" description="Object to display fields from field set" />
+    <aura:attribute name="isSelected" access="public" default="false" type="Boolean" description="Check if card required to displayed as selected" />
+    <aura:attribute name="ctiParams" access="public" type="String" description="CTI click to dial parameters" />
+
+    <!-- REGISTERED EVENTS -->
+    <aura:registerEvent name="selectContact" type="c:selectEvent" />
+
+    <!-- Modal Changes -->
+    <aura:attribute name="availableActions" type="String[]" />
+	<aura:registerEvent name="navigateFlowEvent" type="c:navigateFlow"/>
+    <aura:attribute name="isOpen" default="false" type="Boolean" />
+    <aura:attribute name="canBack" type="Boolean" default="true" />
+    <aura:attribute name="canNext" type="Boolean" default="true" />
+     <!-- Modal Changes -->
+    <!-- MARK UP -->
+    <lightning:card title="{!v.iObject.Name}" iconName="standard:contact" class="{!if(v.isSelected, 'currentSelection', 'custom-box')}">
+        <aura:set attribute="actions">
+            <aura:if isTrue="{!v.isSelected}">
+                <lightning:formattedText class="currentSelection" value="Current Selection" />
+                <aura:set attribute="else">
+                    <lightning:button name="details" label="Select" onclick="{!c.selectContact}" value="{!v.iObject.Id}" />
+                </aura:set>
+            </aura:if>
+        </aura:set>
+        <div class="slds-p-horizontal_medium">
+            <lightning:recordViewForm recordId="{!v.iObject.Id}" objectApiName="Contact">
+                <lightning:layout >
+                    <lightning:layoutItem size="12">
+                        <lightning:outputField fieldName="Job_Role__c" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <lightning:layout >
+                    <lightning:layoutItem size="7">
+                        <div><lightning:clickToDial recordId="{!v.iObject.Id}" value="{!v.iObject.MobilePhone}" params="{!v.ctiParams}" />
+                            <lightning:outputField fieldName="TPS_Mobile__c" /></div>
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="5">
+                        <lightning:outputField fieldName="Primary__c" class="checkOf checkOfBtm labelNoHelpTxt" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <lightning:layout >
+                    <lightning:layoutItem size="7">
+                        <div><lightning:clickToDial recordId="{!v.iObject.Id}" value="{!v.iObject.Phone}" params="{!v.ctiParams}" />
+                            <lightning:outputField fieldName="TPS_Phone__c" /></div>
+                        <lightning:outputField fieldName="Email" variant="label-hidden" />
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="5">
+                        <lightning:outputField fieldName="Allow_Call__c" class="checkOf checkOfDnt labelHelpTxt txtValue" />
+                        <lightning:outputField fieldName="DoNotCall" class="checkOf labelNoHelpTxt" />
+                        <lightning:outputField fieldName="HasOptedOutOfEmail" class="checkOf labelNoHelpTxt" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <lightning:layout >
+                    <lightning:layoutItem size="12">
+                        <lightning:outputField fieldName="Description" variant="label-hidden" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:recordViewForm>
+        </div>
+    </lightning:card>
+    <aura:if isTrue="{!v.isOpen}">
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{! c.closeModel }"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Contact Selection</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <lightning:formattedText class="currentSelection" value="Current Selection" />
+                    : {!v.iObject.Name}
+                </div>
+                <footer class="slds-modal__footer">
+                    <lightning:button variant="neutral" 
+                                      label="Cancel"
+                                      title="Cancel"
+                                      onclick="{! c.closeModel }"/>
+                    <!--<lightning:button variant="brand" aura:id="BACK"
+                                      label="Previous"
+                                      title="Previous"
+                                      onclick="{! c.Previous }"/>-->
+                    <lightning:button variant="brand" aura:id="NEXT" 
+                                      label="Next"
+                                      title="Next"
+                                      onclick="{! c.Next }"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </aura:if>
+</aura:component>

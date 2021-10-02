@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percentage_Receive_Log_Into_Software</fullName>
+    <active>true</active>
+    <description>Percentage must be between 0 and 100%.</description>
+    <errorConditionFormula>OR( Percentage_Receive_Log_Into_Software__c &gt; 1.0,
+Percentage_Receive_Log_Into_Software__c  &lt; 0.0
+)</errorConditionFormula>
+    <errorDisplayField>Percentage_Difficulty_Log_Into_Software__c</errorDisplayField>
+    <errorMessage>Log into Software Percentage must be between 0 and 100%.</errorMessage>
+</ValidationRule>

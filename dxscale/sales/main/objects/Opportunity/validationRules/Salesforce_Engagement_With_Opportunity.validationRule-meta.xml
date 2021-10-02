@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Salesforce_Engagement_With_Opportunity</fullName>
+    <active>false</active>
+    <description>To capture the Engagement of the opportunity with Salesforce.</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,
+   
+  AND(
+      RecordType.DeveloperName=&quot;Standard_Opportunity&quot;,
+      NOT(CONTAINS(TEXT(StageName),$Label.Opportunity_Sales_Stages_Stage1)),
+   OR(
+         CONTAINS (TEXT(Product__c),&quot;Financials&quot;),
+         CONTAINS (TEXT(Product__c),&quot;Sage People&quot;),
+         CONTAINS (TEXT(Product__c),&quot;Sage Live&quot;)
+     )),
+    ISBLANK(Text(Salesforce_Engagement__c))
+)</errorConditionFormula>
+    <errorDisplayField>Salesforce_Engagement__c</errorDisplayField>
+    <errorMessage>When you select an appropriate product as part of this opportunity we require you to state the interaction (engagement) you&apos;ve had with Salesforce as part of this opportunity.</errorMessage>
+</ValidationRule>

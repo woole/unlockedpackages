@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stub_Class__c</fullName>
+    <description>In development phases we may want to call a stub class for a service invocation. In this case we configure the Service Type to be stub and we create a Callable class to implement that stub and put its name as the Stub class.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>In development phases we may want to call a stub class for a service invocation. In this case we configure the Service Type to be stub and we create a Callable class to implement that stub and put its name as the Stub class.</inlineHelpText>
+    <label>Stub Class</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,21 @@
+<!-- 
+* @author      : Veni Korapaty
+* @version     : 1.0
+* @since       : 2020-11-02
+* @description :  Mainly used for displaying the Picklistvalues based on a recordtype
+
+-->
+
+<template>
+
+    <template if:true={isRequired}>
+        <lightning-combobox name={fieldApiName} label={fieldLabelName} value={selectedValue} options={PicklistOptions}
+            onclick={handleChange} onchange={handleChange} required
+            message-when-value-missing="You Must Specify the value"></lightning-combobox>
+    </template>
+    <template if:false={isRequired}>
+        <lightning-combobox name={fieldApiName} label={fieldLabelName} value={selectedValue} options={PicklistOptions}
+            onclick={handleChange} onchange={handleChange}></lightning-combobox>
+    </template>
+
+</template>

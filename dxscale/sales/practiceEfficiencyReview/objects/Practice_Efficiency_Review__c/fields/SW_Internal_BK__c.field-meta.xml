@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SW_Internal_BK__c</fullName>
+    <description>What software used across the practice of Internal BK(if you do all the process what do you prefer to use)?[select one of dropdown values]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What software used across the practice of Internal BK(if you do all the process what do you prefer to use)?[select one of dropdown values]</inlineHelpText>
+    <label>Internal BK</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Excel</fullName>
+                <default>false</default>
+                <label>Excel</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other (please state)</label>
+            </value>
+            <value>
+                <fullName>QBO</fullName>
+                <default>false</default>
+                <label>QBO</label>
+            </value>
+            <value>
+                <fullName>Sage CM</fullName>
+                <default>false</default>
+                <label>Sage CM</label>
+            </value>
+            <value>
+                <fullName>SBC PE</fullName>
+                <default>false</default>
+                <label>SBC PE</label>
+            </value>
+            <value>
+                <fullName>Xero</fullName>
+                <default>false</default>
+                <label>Xero</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,26 @@
+.THIS div.outercard {
+}
+.THIS .slds-truncate {
+ text-overflow: inherit;
+ white-space: normal;
+ word-wrap: break-word;
+ overflow-wrap: break-word; 
+}
+.THIS .phtable {
+ max-height: 350px;
+ overflow: auto;
+ width: 100%;
+}
+.THIS .phmtable {
+ max-height: 350px;
+ overflow: auto;
+ width: 100%;
+}
+.THIS .colorcoding-yellow{
+    background : #FFB500 !important;
+    color : black;
+}
+.THIS .colorcoding-red{ 
+    background : #C7384F !important;
+    color : white;
+}

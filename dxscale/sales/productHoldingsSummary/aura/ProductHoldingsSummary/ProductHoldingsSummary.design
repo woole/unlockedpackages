@@ -1,0 +1,8 @@
+<design:component >
+    <design:attribute name="title" default="Active Product Holdings" label="title" description="What to show in the component"/>
+    <design:attribute name="accountId" label="accountId" description="Used override in scratch Orgs.leave blank to pick up the recordId"/>
+    <design:attribute name="fieldName" label="Field Name" description="Used to integrate data with the Global id.leave blank to pick up the recordId"/>
+    <design:attribute name="invokerId" default="ProductHoldingSummary_Invocation_1" label="Invoker Id" description="Different invoker ids allow for components to change their versions etc at separate paces"/>
+    <design:attribute name="ProdHoldingQueryConfig" default="ProdHoldingSumm_ProdHolding" label="ProdHoldingQueryConfig" description="The config used to query and display the product holdlings"/>
+    <design:attribute name="ProdHoldingModQueryConfig" default="ProdHoldingSumm_ProdHoldingMod" label="ProdHoldingModQueryConfig" description="The config used to query and display the product holdling modules"/>
+</design:component>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Few users need to be allowed on changing the status of closed won/lost opportunities. Validation Rule - Backward Stage not allowed</description>
+    <isLicensed>false</isLicensed>
+    <label>Bypass Opportunity Close Validation</label>
+</CustomPermission>

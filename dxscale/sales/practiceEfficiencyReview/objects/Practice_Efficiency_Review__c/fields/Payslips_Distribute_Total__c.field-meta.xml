@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payslips_Distribute_Total__c</fullName>
+    <description>Question 18: Total of Percentage of all distribute payslips options should be less than or equal 100%</description>
+    <externalId>false</externalId>
+    <formula>Payslips_Distribute_Email__c +  Payslips_Distribute_Post__c   + Payslips_Distribute_Portal__c  +  Payslips_Distribute_3rd_Party__c  +  Payslips_Distribute_Other__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Question 18: Total of Percentage of all distribute payslips options should be less than or equal 100%</inlineHelpText>
+    <label>----- Total of Percentage</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

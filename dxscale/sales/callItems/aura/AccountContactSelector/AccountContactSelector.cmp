@@ -1,0 +1,126 @@
+<aura:component implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes,lightning:availableForFlowScreens"
+   controller="ContactSelectorLTCtrl">
+   <!-- Handle component initialization in a client-side controller -->
+   <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    
+   <!-- Attributes and LDS records -->
+   <aura:attribute name="campaigns" type="Campaign[]" />
+   <aura:attribute name="contacts" type="Contact[]" />
+   <aura:attribute name="accountId" type="Id" />
+   <aura:attribute name="contactId" type="String" />
+   <aura:attribute name="recordId" type="String" />
+   <aura:attribute name="record" type="Object" />
+   <aura:attribute name="simpleRecord" type="Object" />
+   <aura:attribute name="totalContacts" type="Integer" default="1" />
+   <aura:attribute name="totalNewContacts" type="Integer" default="0" />
+   <aura:attribute name="createMode" type="Boolean" default="false" />
+
+   <aura:attribute name="MailingCountryPicklist" type="Object" />
+   <aura:attribute name="mailingCountryString" type="String" />
+   <aura:attribute name="JobRolePicklist" type="Object" />
+   <aura:attribute name="jobRoleString" type="String" />
+   <aura:attribute name="clickToDialParams" type="String" />
+   <aura:attribute name="newContact" type="Object" />
+   <aura:attribute name="simpleNewContact" type="Object" />
+   <aura:attribute name="newContactError" type="String" access="private" />
+
+   <force:recordData aura:id="contactRecordCreator" layoutType="FULL" mode="EDIT" targetRecord="{!v.newContact}"
+      targetFields="{!v.simpleNewContact}" targetError="{!v.newContactError}" />
+
+   <!-- HANDLERS -->
+   <aura:handler name="selectContact" event="c:selectEvent" action="{!c.setContact}" />
+
+   <!-- Display markup -->
+   <div class="slds-page-header slds-page-header_object-home slds-icon-standard-account">
+      <lightning:card class="custom-box  slds-icon-standard-account" iconName="standard:contact_list"
+         title="Account Contacts">
+
+         <lightning:layout>
+            <lightning:layoutItem size="12" padding="around-small">
+               <p style="font-size:15px">Select Contact ({!v.totalContacts} usable) or Create New
+               </p>
+            </lightning:layoutItem>
+         </lightning:layout>
+         <lightning:layout>
+            <aura:if isTrue="{!v.totalContacts == 0}">
+               <lightning:layoutItem size="12">
+                  <p class="slds-p-horizontal_small">
+                     <lightning:formattedText class="alertText"
+                        value="Currently there are no valid contacts on Account." />
+                  </p>
+                  <p class="slds-p-horizontal_small">
+                     <lightning:formattedText
+                        value="To continue with this, need to find new contacts through research channels and add these contacts to the Account using the option above." />
+                  </p>
+               </lightning:layoutItem>
+            </aura:if>
+         </lightning:layout>
+         <lightning:layout>
+            <lightning:layoutItem size="12" padding="around-small">
+               <aura:iteration var="contact" items="{!v.contacts}">
+                  <c:selectorCard iObject="{!contact}" isSelected="{!contact.Id == v.contactId}" ctiParams="{!v.clickToDialParams}" availableActions="{!v.availableActions}"
+    navigateFlowEvent="{!c.handleNavigate}" />
+               </aura:iteration>
+            </lightning:layoutItem>
+         </lightning:layout>
+      </lightning:card>
+      <!-- commenting the contact creation from the flow as per UKIHARM-50 -->
+      <!-- <lightning:layout>
+         <lightning:layoutItem size="12" padding="around-small">
+            <lightning:card title="Create New Contact?" iconName="custom:custom103" footer="" class="custom-box">
+               <aura:set attribute="actions">
+                  <lightning:button name="newcontact" label="Create" onclick="{!c.createContact}"
+                     value="{!v.simpleRecord.account__c}" />
+               </aura:set>
+               <aura:if isTrue="{!v.createMode == true}">
+                  <p class="slds-p-horizontal_small">
+                     <lightning:input label="First Name" name="firstname" value="{!v.simpleNewContact.FirstName}" />
+                  </p>
+                  <p class="slds-p-horizontal_small">
+                     <lightning:input label="Last Name" name="lastname" value="{!v.simpleNewContact.LastName}" />
+                  </p>
+                  <p class="slds-p-horizontal_small">
+                     <lightning:input type="Email" label="Email" name="Email" value="{!v.simpleNewContact.Email}" />
+                  </p>
+                  <p class="slds-p-horizontal_small">
+                     <lightning:input type="tel" label="Phone" name="tel" value="{!v.simpleNewContact.Phone}" />
+                  </p>
+
+                  <p class="slds-p-horizontal_small">
+                     <lightning:select name="JobRoleSelect" aura:id="JobRoleSelect" label="Job Role"
+                        value="{!v.jobRoleString}">
+                        <aura:iteration items="{!v.JobRolePicklist}" var="item">
+                           <option value="{!item}">{!item}</option>
+                        </aura:iteration>
+                     </lightning:select>
+                  </p>
+				  <p class="slds-p-horizontal_small">
+                     <lightning:input label="Mailing City" name="mailingcity"
+                        value="{!v.simpleNewContact.MailingCity}" />
+                  </p>
+                  <p class="slds-p-horizontal_small">
+                     <lightning:input label="Mailing PostalCode" name="mailingpostalcode"
+                        value="{!v.simpleNewContact.MailingPostalCode}" />
+                  </p>
+                  <p class="slds-p-horizontal_small">
+                     <lightning:select name="MailingCountrySelect" aura:id="MailingCountrySelect"
+                        label="Mailing Country" value="{!v.mailingCountryString}">
+                        <aura:iteration items="{!v.MailingCountryPicklist}" var="item">
+                           <option value="{!item}">{!item}</option>
+                        </aura:iteration>
+                     </lightning:select>
+                  </p>
+
+                  <p></p>
+                  <p class="slds-p-horizontal_small slds-p-top_small">
+                     <lightning:button name="newcontactsave" variant="brand" label="Save" onclick="{!c.saveNewContact}"
+                        value="{!v.simpleNewContact}" />
+                  </p>
+
+               </aura:if>
+            </lightning:card>
+         </lightning:layoutItem>
+      </lightning:layout> -->
+   </div>
+</aura:component>

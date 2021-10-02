@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Current_Month__c</fullName>
+    <description>NOT SURE THIS FIELD IS REQUIRED
+JIRA-CCORE-1653</description>
+    <externalId>false</externalId>
+    <formula>MONTH(TODAY()) = MONTH( Target_Finish_Date__c ) &amp;&amp;  YEAR(TODAY()) = YEAR( Target_Finish_Date__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>To support the filitering with the list view</inlineHelpText>
+    <label>Is Current Month</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

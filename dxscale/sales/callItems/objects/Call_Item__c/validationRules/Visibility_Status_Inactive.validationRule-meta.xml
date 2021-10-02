@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Visibility_Status_Inactive</fullName>
+    <active>true</active>
+    <description>If Call Item Visibility Status = &apos;Inactive&apos; then Sales Agent is unable to change the Call Item Status - updated  for EAD-1182</description>
+    <errorConditionFormula>AND(
+$Setup.CallItemControlSwtich__c.Run_Validation_Rules__c,
+Text(Visibility_Status__c) = &quot;Inactive&quot;,
+ NOT($Permission.Global_Sales_Operations),NOT($Profile.Name =&apos;System Administrator&apos;),NOT($Permission.Global_Sales_Manager)
+           
+)</errorConditionFormula>
+    <errorMessage>If Call Item Visibility Status = &apos;Inactive&apos;  you cannot  change the Call Item Status</errorMessage>
+</ValidationRule>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Close_Date_Can_Not_Be_in_Future</fullName>
+    <active>true</active>
+    <description>Closed Date can not be in future or cannot be more than 30 days in the past for closed opportunities</description>
+    <errorConditionFormula>AND(
+OR(
+AND(NOT(ISBLANK( CloseDate )), (TODAY() - CloseDate) &gt; 30,
+OR(
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+ISPICKVAL(StageName, &quot;Rejected&quot;))
+),
+AND(NOT(ISBLANK( CloseDate )), CloseDate &gt; TODAY(),
+OR(
+ISPICKVAL(StageName, &quot;Closed Won&quot;),
+ISPICKVAL(StageName, &quot;Closed Lost&quot;),
+ISPICKVAL(StageName, &quot;Rejected&quot;))
+)
+),
+$Setup.OpportunityControlSwitch__c.RunValidationRules__c,
+!OR(
+$Permission.Global_Sales_Operations,
+$Permission.Bypass_Opportunity_Close_Validation
+)
+)</errorConditionFormula>
+    <errorDisplayField>CloseDate</errorDisplayField>
+    <errorMessage>You have entered an invalid date, an opportunity close date cannot be in the future or cannot be more than 30 days in the past.</errorMessage>
+</ValidationRule>

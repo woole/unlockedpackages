@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_MissingContact</fullName>
+    <active>true</active>
+    <description>Can&apos;t move to stage beyond Missing Contact if no contact assigned.</description>
+    <errorConditionFormula>AND(
+$Setup.CallItemControlSwtich__c.Run_Validation_Rules__c, 
+ISBLANK( Contact__c ) , 
+OR ( 
+ISPICKVAL(Status__c,&quot;To Be Actioned&quot;), 
+ISPICKVAL(Status__c,&quot;Working&quot;), 
+ISPICKVAL(Status__c,&quot;Converted&quot;) 
+) 
+)</errorConditionFormula>
+    <errorDisplayField>Contact__c</errorDisplayField>
+    <errorMessage>Please select a Contact before working this call item</errorMessage>
+</ValidationRule>

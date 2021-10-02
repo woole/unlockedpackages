@@ -1,0 +1,33 @@
+<!-- 
+    Component created as part of EAD-2323
+    Author - Himanshu Bansal
+    Created Date - 13 July, 2021
+-->
+
+<template>
+
+    <lightning-card title="Related Opportunities">
+
+        <div class="slds-p-vertical_small">
+            <lightning-button label="Open" title="Open Opportunities" class="slds-m-left_x-small "
+                onclick={handleOpenOpps}></lightning-button>
+            <lightning-button label="Won" title="Closed-Won Opportunities" onclick={handleClosedWonOpps}
+                class="slds-m-left_x-small  "></lightning-button>
+            <lightning-button label="Lost" title="Closed-Lost Opportunities" onclick={handleClosedLostOpps}
+                class="slds-m-left_x-small "></lightning-button>
+            <lightning-button label="All" title="All Opportunities" onclick={handleAllOpps}
+                class="slds-m-left_x-small ">
+            </lightning-button>
+            <lightning-button label="New" title="New Opportunity" onclick={navigateToNewOpportunity}
+                class="slds-float_right slds-m-right_small "></lightning-button>
+        </div>
+        <div if:true={viewOppList} class="slds-scrollable" style="max-height:20rem">
+            <lightning-datatable key-field="Id" data={viewOppList} columns={columns} sorted-by={sortBy}
+                sorted-direction={sortDirection} onsort={handleSortdata} hide-checkbox-column="true">
+            </lightning-datatable>
+        </div>
+        <div if:true={error}>
+            {error}
+        </div>
+    </lightning-card>
+</template>

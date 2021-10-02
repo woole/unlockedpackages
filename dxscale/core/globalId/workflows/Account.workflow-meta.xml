@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Global_Account_Id_Update</fullName>
+        <description>Global Account Id field update logic</description>
+        <field>Global_Id__c</field>
+        <formula>TEXT(VALUE(Account_Sequence_Id__c)+1000000000)</formula>
+        <name>Global Account Id Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Populate Global Account Id</fullName>
+        <actions>
+            <name>Global_Account_Id_Update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Account.Account_Sequence_Id__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Account.Global_Id__c</field>
+            <operation>equals</operation>
+        </criteriaItems>
+        <description>This rule will auto populate the Global Account id field value on Account</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

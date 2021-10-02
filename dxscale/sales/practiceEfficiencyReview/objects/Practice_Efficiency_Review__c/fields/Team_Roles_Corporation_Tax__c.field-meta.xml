@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_Roles_Corporation_Tax__c</fullName>
+    <description>Tell me about the team: the number of roles on Corporation Tax. [up to 5 digits]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Tell me about the team: the number of roles on Corporation Tax. [up to 5 digits]</inlineHelpText>
+    <label>Number of Roles - Corporation Tax</label>
+    <precision>5</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

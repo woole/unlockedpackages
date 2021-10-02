@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>StatusReason_Mandatory</fullName>
+    <active>true</active>
+    <description>&quot;Status Reasons&quot; mandatory when &quot;Status&quot; is updated to &apos;Not Accepted&apos; or &apos;Closed&apos;  except System Admin</description>
+    <errorConditionFormula>AND($Setup.CallItemControlSwtich__c.Run_Validation_Rules__c,
+NOT(CONTAINS($Profile.Name, &quot;System Administrator&quot;)),
+ISBLANK(TEXT(Status_Reasons__c)),
+OR(
+ISPICKVAL(Status__c, &quot;Not Accepted&quot; ),
+ISPICKVAL( Status__c , &quot;Closed&quot; )
+)
+)</errorConditionFormula>
+    <errorMessage>Status Reasons is mandatory when Status is changed to Not Accepted or Closed.</errorMessage>
+</ValidationRule>

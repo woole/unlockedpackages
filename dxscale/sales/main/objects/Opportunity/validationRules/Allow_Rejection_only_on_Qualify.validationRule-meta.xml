@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Rejection_only_on_Qualify</fullName>
+    <active>true</active>
+    <description>You can only Reject  Opportunities  which are in qualification stage</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,
+     NOT($Permission.Sage_Global_Sales_Operations),
+   OR(
+       AND(
+            ISCHANGED(StageName), 
+           TEXT(PRIORVALUE(StageName)) != &quot;Qualify&quot;, 
+           Text(StageName) = &quot;Rejected&quot;
+           ),
+       AND(Text(StageName) = &quot;Rejected&quot;, 
+            ISBLANK(Text( Why_We_Lost__c))
+           ) 
+))</errorConditionFormula>
+    <errorDisplayField>Why_We_Lost__c</errorDisplayField>
+    <errorMessage>You can only reject opportunities which are in Qualify stage and if opportunity stage is Rejected, reject reason must be specified</errorMessage>
+</ValidationRule>

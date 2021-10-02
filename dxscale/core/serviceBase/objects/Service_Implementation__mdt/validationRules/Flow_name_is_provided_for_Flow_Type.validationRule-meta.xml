@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flow_name_is_provided_for_Flow_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(  ISPICKVAL(Implementation_Type__c, &apos;Flow&apos;), 
+ ISBLANK( Implementing_Flow__c ) , false
+)</errorConditionFormula>
+    <errorMessage>Implementation type of Flow requires the Implementing Flow field to be filled</errorMessage>
+</ValidationRule>

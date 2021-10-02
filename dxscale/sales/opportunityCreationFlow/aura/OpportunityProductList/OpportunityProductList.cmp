@@ -1,0 +1,44 @@
+<aura:component implements="force:appHostable,force:hasRecordId,lightning:availableForFlowScreens" >
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.selectedLookUpRecords}" action="{!c.itemsChange}" />
+    <aura:handler name="change" value="{!v.clickSaveWarning}" action="{!c.clickSaveWarningChange}" />
+
+    <!-- attributes for input / output from / to flow -->
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="productJSONString" type="String" default="[]" />
+
+    <!-- attributes for the lookup component -->
+    <aura:attribute name="pricebookId" type="String" default="" />
+    <aura:attribute name="selectedLookUpRecords" type="sObject[]" default="[]" />
+    <aura:attribute name="selectedLookUpRecordsString" type="String" default="[]" />
+    <aura:attribute name="currencyISOCode" type="String" default="GBP" />
+    <aura:attribute name="productsaved" type="Boolean" default="false" />
+
+    <!-- attributes for the grid component -->
+    <aura:attribute name="mydata" type="Object" />
+    <aura:attribute name="mycolumns" type="List" />
+    <aura:attribute name="draftValues" type="Object"/>
+    <aura:attribute name="clickSaveWarning" type="Boolean" default="false"/>
+    <aura:attribute name="initPhase" type="Boolean" default="true" />
+
+    <c:SearchProducts  IconName="standard:PricebookEntry"
+        lstSelectedRecords="{!v.selectedLookUpRecords}" label="Product Name" currencyISOCode="{!v.currencyISOCode}"
+        selectedLookUpRecordsString="{!v.selectedLookUpRecordsString}" pricebookId="{!v.pricebookId}" />
+
+    <!--Header Part-->
+    <div class="slds-page-header">
+        <h1 class="slds-page-header__row">Selected Products for Account Currency:&nbsp; <b>{!v.currencyISOCode}</b></h1>
+    </div>
+
+    <!--   If datatable at some point has insufficient functionality we may need to implement this as an iteration -->
+    <div style="height: 300px">
+        <lightning:datatable columns="{! v.mycolumns }" data="{! v.mydata }" hideCheckboxColumn="true" keyField="id" title="Selected Products"
+            draftValues="{! v.draftValues }" onrowaction="{!c.handleRowAction}" onsave="{! c.handleSave }" oncellchange="{!c.clickSaveWarningChange}"/>
+    </div>
+
+    <aura:if isTrue="{!v.clickSaveWarning == true}">
+        <h2 style="text-align:right;color:blue">Please click "Save" before proceeding to "Next"</h2>
+    </aura:if>
+
+</aura:component>

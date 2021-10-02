@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Attendee_from_Sage__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>EAD-2227: Attendee from Sage (link with User)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Primary Attendee from Sage</inlineHelpText>
+    <label>Primary Attendee from Sage</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>ExCo_Sponsorship_Visits</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Start_Time__c</fullName>
+    <description>Time the service starts to run. For an async invocation this is after the service call is dequeued from the Platform Event</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Time the service starts to run. For an async invocation this is after the service call is dequeued from the Platform Event</inlineHelpText>
+    <label>Service Start Time</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

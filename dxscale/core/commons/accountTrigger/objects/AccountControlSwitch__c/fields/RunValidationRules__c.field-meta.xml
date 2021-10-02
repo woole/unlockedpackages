@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RunValidationRules__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>Checkbox to control the execution of workflows on the account object</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Checkbox to control the execution of workflows on the account object</inlineHelpText>
+    <label>Run Validation Rules</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

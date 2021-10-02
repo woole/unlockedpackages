@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Sales_Booking_ASB__c</fullName>
+    <description>Same as Opportunity-Annual_Sales_Booking_ASB__c</description>
+    <externalId>false</externalId>
+    <label>Annual Sales Booking (ASB)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

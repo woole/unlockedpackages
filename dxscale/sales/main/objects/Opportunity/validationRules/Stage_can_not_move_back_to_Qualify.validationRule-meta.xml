@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage_can_not_move_back_to_Qualify</fullName>
+    <active>true</active>
+    <description>Oppty stage can not move back to Qualify again. #EAD-1425</description>
+    <errorConditionFormula>AND($Setup.OpportunityControlSwitch__c.RunValidationRules__c,ISCHANGED(StageName), TEXT(StageName) == &apos;Qualify&apos;, NOT(OR(ISPICKVAL(PRIORVALUE(StageName), &quot;Qualify&quot;), ISPICKVAL(PRIORVALUE(StageName), &quot;Rejected&quot;), OR($Permission.Global_Sales_Operations, $Permission.Global_Sales_Super_User))))</errorConditionFormula>
+    <errorMessage>Opportunity Stage can not move back to &apos;Qualify&apos; again.</errorMessage>
+</ValidationRule>

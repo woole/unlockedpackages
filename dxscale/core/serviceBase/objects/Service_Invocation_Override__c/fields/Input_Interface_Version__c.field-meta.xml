@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Input_Interface_Version__c</fullName>
+    <description>Input Interface that this invocation will provide to the Service</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Input Interface that this invocation will provide to the Service</inlineHelpText>
+    <label>Input Interface Version</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

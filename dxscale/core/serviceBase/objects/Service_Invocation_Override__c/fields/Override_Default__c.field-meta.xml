@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Override_Default__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If checked this override will be run unless another row with a specified User Permission is selected ahead of it because the  running user has the Custom Permission specified in that row. If checking this box ensure that the User Permission field is empty and note the Custom Metadata Type for this invocation will not be used in any circumstances</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If checked this override will be run unless another row with a specified User Permission is selected ahead of it because the  running user has the Custom Permission specified in that row. If checking this box ensure that the User Permission field is empty</inlineHelpText>
+    <label>Override Default</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

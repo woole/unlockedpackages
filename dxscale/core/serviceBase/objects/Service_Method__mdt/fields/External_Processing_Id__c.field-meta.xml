@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Processing_Id__c</fullName>
+    <description>An id to help an external process a request. Only used for Remote Proxy Services.
+For a Salesforce remote this is the Invocation Id on a remote system that invokes a service on that remote system.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>An id to help an external process a request. Only used for Remote Proxy Services.
+For a Salesforce remote this is the Invocation Id on a remote system that invokes a service on that remote system.</inlineHelpText>
+    <label>External Processing Id</label>
+    <length>80</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

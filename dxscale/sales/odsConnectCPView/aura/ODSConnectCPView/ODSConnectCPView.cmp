@@ -1,0 +1,124 @@
+<aura:component implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes"
+                controller="ODSConnectCPViewLtCtrl">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- attributes for the modules component -->
+    <aura:attribute name="pageData" type="List" />
+    <aura:attribute name="filteredData" type="List" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="searchFields" type="List" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="allData" type="List"/>
+    <aura:attribute name="currentPageNumber" type="Integer" default="1"/>
+    <aura:attribute name="pageSize" type="Integer" default="5"/>
+    <aura:attribute name="totalPages" type="Integer" default="0"/>
+    <aura:attribute name="filteredPages" type="Integer" default="0"/>
+    <aura:attribute name="pageList" type="List"/>
+    <aura:attribute name="pageListLast" type="Integer" default="0"/>
+    <aura:attribute name="totalRecordCount" type="Integer" default="0"/>
+    <aura:attribute name="filter" type="String" />
+    <aura:attribute name="columnJsonString" type="String"/>
+    <aura:attribute name="viewName" type="String"/>
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="autoFetch" type="Boolean" default="true" />
+    <aura:attribute name="allowFilter" type="Boolean" default="false" />
+    <aura:attribute name="fullLabel" type="String" />
+    <aura:attribute name="isSetUp" type="Boolean" default="false"/>
+    <aura:attribute name="ODSCallAllowed" type="Boolean" default="true"/>
+    <aura:attribute name="paginate" type="Boolean" default="true"/>
+    
+    <div aura:id="DataUnavailable" class="slds-hide custom-box">
+        <div style="border-bottom-style: solid ;border-width: 3px; border-color: lightgray;">
+            <lightning:card title="{! v.label }" iconName="utility:warning">
+                <lightning:layout>
+                    <lightning:layoutItem size="12" padding="around-small">
+                        <lightning:formattedText value="{! v.label + ' not available' }" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:card>
+        </div>
+    </div>
+    <div aura:id="FetchRequired" class="slds-hide custom-box">
+        <div style="border-bottom-style: solid ;border-width: 3px; border-color: lightgray;">
+            <lightning:card title="{! v.label }" iconName="utility:database">
+                <lightning:layout>
+                    <span class="slds-align_absolute-center">
+                        <lightning:layoutItem size="12" padding="around-small">
+                        	<lightning:button label="Fetch" onclick="{!c.onFetch}"/>
+                    	</lightning:layoutItem>
+                    </span>
+                </lightning:layout>
+            </lightning:card>
+        </div>
+    </div>
+    <div aura:id="LoadingMsg" class="slds-show custom-box">
+        <lightning:card title="{! v.label }" iconName="standard:generic_loading">
+            <lightning:layout>
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:spinner alternativeText="Loading" />
+                    <lightning:formattedText value="Loading..." />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:card>
+    </div>
+    <div aura:id="DataAvailable" class="slds-hide custom-box">
+        <div style="border-bottom-style: solid; border-width: 3px; border-color: lightgray;">
+            <lightning:card title="{!v.fullLabel}" iconName="standard:related_list">
+                <lightning:layout multipleRows="true">
+                    <aura:if isTrue="{!v.totalRecordCount > 0}">
+                        <aura:if isTrue="{!and(v.totalRecordCount > 5, v.allowFilter)}">
+                            <span class="slds-form_horizontal slds-align_absolute-left">
+                                <lightning:layoutItem size="12" padding="horizontal-small">
+                                    <lightning:input type="text" onchange="{!c.updateFilter}" value="{!v.filter}" label="Filter" />
+                                </lightning:layoutItem>
+                            </span>
+                        </aura:if>
+                        <lightning:layoutItem size="12" padding="horizontal-small">
+                            <div aura:id="tableView">
+                                <lightning:datatable columns="{! v.columns }"
+                                                     data="{! v.pageData }"
+                                                     keyField="ExternalId"
+                                                     hideCheckboxColumn="true"
+                                                     title="{! v.label }"
+                                                     enableInfiniteLoading="false"
+                                                     showRowNumberColumn="false"/>
+                            </div>
+                        </lightning:layoutItem>
+                    </aura:if>
+                    <aura:if isTrue="{!and(v.filteredPages > 1, v.paginate)}">
+                        <span class="slds-align_absolute-center">
+                            <lightning:layoutItem size="12" padding="around-small" flexibility="auto">
+                                <lightning:button label="First" iconName="utility:left" iconPosition="left" onclick="{!c.onFirst}" disabled="{! v.currentPageNumber == 1}"/>
+                                <lightning:button iconName="utility:chevronleft" iconPosition="left" onclick="{!c.onPrev}" disabled="{! v.currentPageNumber == 1}"/>
+                                <span class="slds-p-horizontal_x-small">
+                                    <a onclick="{!c.processMe}" name="1" class="{! (v.currentPageNumber == 1) ? 'selected' : ''}">1</a>
+                                </span>
+                                <aura:if isTrue="{!v.pageList[0] > 2}">
+                                    <span class="slds-p-horizontal_xxx-small">...</span>
+                                </aura:if>
+                                <aura:iteration items="{!v.pageList}" var="item">
+                                    <span class="slds-p-horizontal_x-small">
+                                        <a onclick="{!c.processMe}" name="{!item}" class="{! (v.currentPageNumber == item) ? 'selected' : ''}">{!item}</a>
+                                    </span>
+                                </aura:iteration>
+                                <aura:if isTrue="{!v.filteredPages - v.pageListLast > 1}">
+                                    <span class="slds-p-horizontal_xxx-small">...</span>
+                                </aura:if>
+                                <span class="slds-p-horizontal_x-small">
+                                    <a onclick="{!c.processMe}" name="{!v.filteredPages}" class="{! (v.currentPageNumber == v.filteredPages) ? 'selected' : ''}">{!v.filteredPages}</a>
+                                </span>
+                                <lightning:button iconName="utility:chevronright" iconPosition="right" disabled="{! v.currentPageNumber == v.filteredPages}" onclick="{!c.onNext}"/>
+                                <lightning:button label="Last" iconName="utility:right" iconPosition="right" disabled="{! v.currentPageNumber == v.filteredPages}" onclick="{!c.onLast}"/>
+                            </lightning:layoutItem>
+                        </span>
+                    </aura:if>
+                    <aura:if isTrue="{!v.totalRecordCount == 0}">
+                        <lightning:layoutItem size="12" padding="around-small">
+                            <lightning:formattedText value="No records retrieved" />
+                        </lightning:layoutItem>
+                    </aura:if>
+                </lightning:layout>
+            </lightning:card>
+        </div>
+    </div>
+     
+</aura:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>External_Invocation_needs_Custom_Perm</fullName>
+    <active>true</active>
+    <description>An external user must have a Custom Permission assigned to invoke a service</description>
+    <errorConditionFormula>IF(  AND (External_Invocation__c , Invocation_Restricted_By_Permission__c),
+ISBLANK( Invocation_Permission__c  ) , false
+)</errorConditionFormula>
+    <errorMessage>An external user must have a Custom Permission assigned to invoke a service</errorMessage>
+</ValidationRule>

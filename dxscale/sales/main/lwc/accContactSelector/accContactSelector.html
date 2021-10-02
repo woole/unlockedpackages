@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title={accountName}>
+        <div class="slds-m-around_medium">
+            <div if:true={showSearch}>
+                <div class="slds-m-bottom_small">
+                    <lightning-input type="text" value={searchValue}
+                        label="Enter a Contact Name/Email/Phone Number/Job Role" onchange={searchKeyword}>
+                    </lightning-input>
+                </div>
+                <div class="slds-m-bottom_small">
+                    <lightning-button label="Search for Contact" onclick={handleSearchKeyword} variant="brand">
+                    </lightning-button>
+
+
+                    <lightning-button class="slds-p-left_large" label="Show All Contacts" onclick={handleShowAll}
+                        variant="brand">
+                    </lightning-button>
+                </div>
+            </div>
+
+            <template if:true={contactRecords}>
+                <template for:each={contactRecords} for:item="con">
+                    <c-con-selector-lwc key={con.Id} object-api-name='Contact' record-id={con.Id}
+                        oncontactselection={handleContactSelection}>
+                    </c-con-selector-lwc>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

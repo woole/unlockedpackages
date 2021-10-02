@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_recurring_ACV_rollup__c</fullName>
+    <description>Annual recurring revenue for non-CBC products</description>
+    <externalId>false</externalId>
+    <formula>IF( Contract_Term_Months__c &gt; 11, Monthly_Recurring_Revenue_rollup__c * 12, Monthly_Recurring_Revenue_rollup__c * Contract_Term_Months__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Annual recurring revenue for non-CBC products</inlineHelpText>
+    <label>Annual Contract Value (ACV) - Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

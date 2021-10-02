@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Size_mandatory_at_Selection</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(DATEVALUE(CreatedDate)&gt; DATE(2020,08,01),ISBLANK(DealSize__c),  
+$Permission.Sage_Global_NA_Sales_Agent,
+ISPICKVAL(StageName, &apos;Selection&apos;),
+OR(ISPICKVAL(Product_Solution__c, &apos;X3&apos;), CONTAINS(Roll_up_of_Opp_Products__c, &apos;X3&apos;), 
+CONTAINS(Roll_up_of_Opp_Products__c, &apos;Enterprise Management&apos;))
+)</errorConditionFormula>
+    <errorMessage>Deal Size is mandatory at Selection stage.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,148 @@
+<aura:component implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes"
+    controller="ProductHoldingLTCtrl">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+ 
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="accountId" type="String" />
+    <aura:attribute name="fieldName" type="String" />
+
+    <aura:attribute name="invokerId" type="String"/>
+    <aura:attribute name="ProdHoldingQueryConfig" type="String"/>
+    <aura:attribute name="ProdHoldingModQueryConfig" type="String"/>
+    <aura:attribute name="totalHoldingRecordCount" type="Integer" default="0"/>
+    <aura:attribute name="totalFilteredHoldingRecordCount" type="Integer" default="0"/>
+
+    <aura:attribute name="title" type="String"/>
+    <aura:attribute name="errorMessage" type="String"/>
+    <aura:attribute name="hasError" type="boolean"/>
+
+    <!-- attributes for collections to store holdings and relate them to modules -->
+    <aura:attribute name="productHoldingKeyList" type="String[]" default="[]" access="PRIVATE" />
+    <aura:attribute name="masterObjectArray" type="Object[]" default="[]" access="PRIVATE" />
+	<aura:attribute name="holdingsData" type="Object" access="PRIVATE" />
+    <aura:attribute name="filteredHoldingsData" type="Object" default="[]" access="PRIVATE"/> 
+    <aura:attribute name="holdingsColumns" type="List" access="PRIVATE" />
+   
+    <!-- attributes for the modules component -->
+    <aura:attribute name="modulesData" type="Object" access="PRIVATE" />
+    <aura:attribute name="modulesDataCount" type="Integer" default="0" access="PRIVATE"/>
+    <aura:attribute name="modulesColumns" type="List" access="PRIVATE" />
+
+    <!-- attribute for selected holding in holdings datatable -->
+    <aura:attribute name="selectedHolding" type="VW_Connect_ProductHoldings__x" access="PRIVATE" />
+    <aura:attribute name="selectedHoldings" type="List"/> 
+    
+    <!-- lightning:datatable single row select - radio buttons -->
+    <aura:attribute name="maxRowSelection" type="Integer" default="1" access="PRIVATE" />
+    <aura:attribute name="isButtonDisabled" type="Boolean" default="true" access="PRIVATE" />
+
+    <!-- attributes for filters --> 
+    <aura:attribute name="filterActiveOptions" type="List" default="[
+    {'label': 'Active', 'value': 'Active'},
+    {'label': 'Inactive', 'value': 'Inactive'},
+    {'label': 'All', 'value': ''}
+    ]"/>
+    <aura:attribute name="isActive" type="String" default="Active"/>
+    
+    <!-- table attributes -->
+    <aura:attribute name="sortedBy" type="String" />
+    <aura:attribute name="sortedDirection" type="String" />
+    <aura:attribute name="mSortedBy" type="String" />
+    <aura:attribute name="mSortedDirection" type="String" />
+    
+    <div aura:id="DataUnavailable" class="slds-hide">
+        <lightning:card title="{!$Label.c.Product_Holdings}" iconName="utility:warning">
+            <lightning:layout>
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:formattedText value="{!$Label.c.Unavailable}" />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:card>
+    </div>
+
+    <div aura:id="LoadingMsg" class="slds-show custom-box">
+        <lightning:card title="{!v.label }" iconName="standard:generic_loading">
+            <lightning:layout>
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:spinner alternativeText="Loading" />
+                    <lightning:formattedText value="Loading..." />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:card>
+    </div>
+
+    <div aura:id="DataAvailable" class="slds-hide">
+        <div style="border-bottom-style: solid; border-width: 3px; border-color: lightgray;">
+            <lightning:card title="{!v.isActive + ' ' + $Label.c.Product_Holdings}" 
+                            iconName="standard:product_item">
+                <aura:if isTrue="{!v.totalHoldingRecordCount > 0}">
+                    <lightning:layout>
+                        <lightning:layoutItem flexibility="auto, no-grow" padding="around-small">
+                            <lightning:radioGroup name="radioActiveButtonGroup"
+                                                  options="{!v.filterActiveOptions}"
+                                                  value="{!v.isActive}"
+                                                  type="button"
+                                                  onchange="{!c.updateFilter}"/>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                    <lightning:layout>
+                        <aura:if isTrue="{!v.totalFilteredHoldingRecordCount > 0}">
+                            <lightning:layoutItem size="12" padding="horizontal-small">
+                                <div aura:id="tableView" class="slds-table_resizable-cols phtable">
+                                    <lightning:datatable columns="{! v.holdingsColumns }" 
+                                                         data="{! v.filteredHoldingsData }"
+                                                         hideCheckboxColumn="false" 
+                                                         keyField="ProductHolding_Key__c"
+                                                         title="{!$Label.c.Available_Product_Holdings}" 
+                                                         maxRowSelection="{! v.maxRowSelection }"
+                                                         selectedRows="{! v.selectedHoldings}"
+                                                         onsort="{!c.handleSort}"
+                                                     	 sortedBy="{!v.sortedBy}"
+                                                     	 sortedDirection="{!v.sortedDirection}"
+                                                         onrowselection="{!c.onRowSelection }" />
+                                </div>
+                            </lightning:layoutItem>
+                        </aura:if>
+                        <aura:if isTrue="{!v.totalFilteredHoldingRecordCount == 0}">
+                            <lightning:layoutItem size="12" padding="horizontal-small">
+                                <lightning:formattedText value="{!'There are no ' + v.isActive + ' Product Holdings for this account.'}" />
+                            </lightning:layoutItem>
+                        </aura:if>
+                    </lightning:layout> 
+                </aura:if>
+                <aura:if isTrue="{!v.totalHoldingRecordCount == 0}">
+                    <lightning:layout>
+                    	<lightning:layoutItem size="12" padding="around-small">
+                        	<lightning:formattedText value="No Product Holdings found." />
+                    	</lightning:layoutItem>
+                    </lightning:layout>
+                </aura:if>
+            </lightning:card>
+
+            <lightning:card title="{!$Label.c.Product_Holding_Modules_for_Selected_Holding + ': ' + v.selectedHolding.ProductName__c}"
+                			iconName="standard:product_item">
+                <lightning:layout>
+                    <lightning:layoutItem size="12" padding="horizontal-small">
+                        <aura:if isTrue="{!v.modulesDataCount > 0}">
+                            <div class="slds-table_resizable-cols phmtable">
+                                <lightning:datatable columns="{!v.modulesColumns }" 
+                                                     data="{!v.modulesData }"
+                                                     hideCheckboxColumn="true" 
+                                                     keyField="ProductHoldingModules_Key__c"
+                                                     title="{!$Label.c.Product_Holding_Modules_for_Selected_Holding}" 
+                                                     onsort="{!c.handleModuleSort}"
+                                                 	 sortedBy="{!v.mSortedBy}"
+                                                 	 sortedDirection="{!v.mSortedDirection}"/>
+                            </div>
+                        </aura:if>
+                        <aura:if isTrue="{!v.modulesDataCount == 0}">
+                            <lightning:layoutItem size="12" padding="horizontal-small">
+                                <lightning:formattedText value="No associated Product Holding Modules." />
+                            </lightning:layoutItem>
+                        </aura:if>
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:card>
+        </div>
+    </div>
+</aura:component>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Archived</fullName>
+    <active>true</active>
+    <description>Only sales ops can Archive Call items</description>
+    <errorConditionFormula>AND(
+           $Setup.CallItemControlSwtich__c.Run_Validation_Rules__c,
+           ISCHANGED(Status__c),  
+           Text(Status__c) = &quot;Closed&quot;,
+           Text( Status_Reasons__c)= &quot;Archived&quot;,
+           NOT( $Permission.Global_Sales_Operations)
+        
+           )</errorConditionFormula>
+    <errorMessage>Only sales ops can Archive Call items, Please contact  Sales ops if you want to archive call items.</errorMessage>
+</ValidationRule>

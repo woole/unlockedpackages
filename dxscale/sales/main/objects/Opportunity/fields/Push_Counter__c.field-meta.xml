@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Push_Counter__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>The field tracks the number of times an Opportunity close date is moved into the following month/year.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The field tracks the number of times an Opportunity close date is moved into the following month/year.</inlineHelpText>
+    <label>Push Counter</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,69 @@
+<aura:component implements="force:appHostable,force:hasRecordId,lightning:availableForFlowScreens" >
+
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="change" value="{!v.selectedLookUpRecords}" action="{!c.itemsChange}" />
+
+    <!-- attributes for input / output from / to flow -->
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="productJSONString" type="String" default="[]" />
+
+    <!-- attributes for the lookup component -->
+    <aura:attribute name="pricebookId" type="String" default="" />
+    <aura:attribute name="selectedLookUpRecords" type="sObject[]" default="[]" />
+    <aura:attribute name="selectedLookUpRecordsString" type="String" default="[]" />
+    <aura:attribute name="currencyISOCode" type="String" default="GBP" />
+	<aura:attribute name="productsaved" type="Boolean" default="false" />
+    
+    <!-- attributes for the card component and data  -->
+    <aura:attribute name="mapRadioClicksPD" type="Map" default="" />
+    <aura:attribute name="mapRadioClicksCM" type="Map" default="" />
+    <aura:attribute name="mydata" type="Object" />
+    <aura:attribute name="initPhase" type="Boolean" default="true" />
+
+    <c:SearchProducts  IconName="standard:PricebookEntry"
+        lstSelectedRecords="{!v.selectedLookUpRecords}" label="Product Name" currencyISOCode="{!v.currencyISOCode}"
+        selectedLookUpRecordsString="{!v.selectedLookUpRecordsString}" pricebookId="{!v.pricebookId}" />
+
+    <div class="slds-page-header">
+        <h1 class="slds-page-header__row">Selected Products for Account Currency:&nbsp; <b>{!v.currencyISOCode}</b></h1>
+    </div>
+
+    <lightning:layout>
+        <lightning:layoutItem size="12" padding="around-small">
+            <aura:iteration var="mydatum" items="{!v.mydata}" indexVar="idx">
+                <lightning:card title="{!mydatum.productName}" iconName="standard:product" class="custom-box">
+                    <p class="slds-p-horizontal_small">
+                        <lightning:layout multipleRows="true">
+                            <lightning:layoutItem size="6">
+                                <lightning:input type="number" name="nonRecurringRevenue" value="{!mydatum.nonRecurringRevenue }" placeholder="Amount..." label="Non Recurring Amount" formatter="currency" currencyCode="{!v.currencyISOCode}" step="0.01" />
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="6">
+                                <lightning:input type="number" name="monthlyRecurringRevenue" value="{!mydatum.monthlyRecurringRevenue }" placeholder="Amount..." label="Monthly Recurrring Amount" formatter="currency" currencyCode="{!v.currencyISOCode}" step="0.01"/>
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="6">
+                                <lightning:formattedText value="Commercialization Mode"/>
+                                <lightning:input type="radio" onchange="{!c.radioClickCommercializationMode}" label="Subscription" name="{!mydatum.productName + 'commode'}" value="{!mydatum.id + 'Subscription'}" checked="{!mydatum.clickedSubscription}"/>
+                                <lightning:input type="radio" onchange="{!c.radioClickCommercializationMode}" label="Perpetual" name="{!mydatum.productName + 'commode'}" value="{!mydatum.id + 'Perpetual'}" checked="{!mydatum.clickedPerpetual}" />
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="6">
+                                <lightning:formattedText value="Product Deployment"/>
+                    			<lightning:input type="radio" onchange="{!c.radioClickProductDeployment}" label="Sage Cloud" name="{!mydatum.productName + 'proddep'}" value="{!mydatum.id + 'Sage Cloud'}" checked="{!mydatum.clickedSageCloud}"/>
+                                <lightning:input type="radio" onchange="{!c.radioClickProductDeployment}" label="Premise" name="{!mydatum.productName + 'proddep'}" value="{!mydatum.id + 'Premise'}" checked="{!mydatum.clickedPremise}" />
+                                <lightning:input type="radio" onchange="{!c.radioClickProductDeployment}" label="Partner Cloud" name="{!mydatum.productName + 'proddep'}" value="{!mydatum.id + 'Partner Cloud'}" checked="{!mydatum.clickedPartnerCloud}" />                                
+                            </lightning:layoutItem>
+                            <lightning:layoutItem size="6">
+                                <lightning:input type="number" name="quantity" value="{!mydatum.quantity }" label="Quantity"  />
+                            </lightning:layoutItem> 
+                        </lightning:layout>
+                    </p>
+                </lightning:card>
+            </aura:iteration>
+
+            <div style="height:40px"/>
+
+            <h2 style="text-align:center;color:blue">Please click "Save Products" before proceeding to "Next"</h2>
+
+            <lightning:button aura:Id="Save" class="save-button" variant="brand" label="Save Products" onclick="{!c.handleSave}"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Output_Audit_Override_Option__c</fullName>
+    <defaultValue>&quot;Override&quot;</defaultValue>
+    <description>If the targetted Method Implementaton implements the IService_Implementation_Audit_Override interface then this chooses whether this invocation should respect this (Override, which is the Default) or not and return the Raw output of the service to audit</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the targetted Method Implementaton implements the IService_Implementation_Audit_Override interface then this chooses whether this invocation should respect this (Override, which is the Default) or not and return the Raw output of the service to audit</inlineHelpText>
+    <label>Output Audit Override Option</label>
+    <length>40</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,8 @@
+<design:component >
+    <design:attribute name="recordId" label="Call Item Record Id" default="" description="Call Item Record Id" />
+    <design:attribute name="productJSONString" label="Product JSON String" default="[]" description="Selected Products with attributes" />
+    <design:attribute name="selectedLookUpRecordsString" label="Products Selected JSON String" default="[]" description="Selected Products" />
+    <design:attribute name="pricebookId" label="Pricebook Id" default="" description="Pricebook Id" />
+    <design:attribute name="currencyISOCode" label="Account Currency" default="" description="Account Currency" />
+    <design:attribute name="productsaved" label="Productlist Saved" default="false" description="Product List" />
+</design:component>

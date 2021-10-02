@@ -1,0 +1,46 @@
+<!--
+/*Created as part of EAD-2161
+* New Aura component to support Success Goals functionality, when Opportunity type is "Onboarding". 
+* Created a new tab on Opportunity record detail page to place this component.
+* @Author: Dharani Chennupati
+*/
+-->
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="OnboardingSuccessGoals">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler name="onChangeOfValue" action="{!c.doGetValue}" event="c:OnboardingSuccessGoalEvent"/>
+    <aura:attribute name="StoreValues" type="List" default="[]"/>
+    <aura:attribute name="StoreValuestwo" type="List" default="[]"/>
+    <aura:attribute name="OnboardingScoreList" type="Map"/>
+    <aura:attribute name="selectedOnboardingScore" type="String" default=""/>
+    <aura:attribute name="InitialGoalList" type="List" default="[]"/>
+    <aura:attribute name="selectedInitialGoalList" type="List" default="[]"/>  
+    <aura:attribute name="OtherGoals" type="String"/>
+    <div class="bottom-margin">
+    	<lightning:select aura:id="onboardingScore" value="{!v.selectedOnboardingScore}" onchange="{!c.handleOnboardingScore}" name="onbScorelist" label="Onboarding Score">
+        <option value="">--None--</option>
+            <aura:iteration items="{!v.OnboardingScoreList}" var="ind" indexVar="key">
+            	<option text="{!ind.value}" value="{!ind.key}" selected="{!ind.key==v.selectedOnboardingScore}" />
+        	</aura:iteration>
+        </lightning:select>
+    </div>
+    <div class="bottom-margin">
+        <lightning:dualListbox aura:id="selectGoal"
+                               name="SuccessGoalone"
+                               label="Initial Success Goals"
+                               sourceLabel="Available Goals"
+                               selectedLabel="Selected Goals"
+                               options="{!v.InitialGoalList }"
+                               value="{!v.selectedInitialGoalList}"
+                               onchange="{!c.handleChange}"/>
+    </div>
+    <div class="bottom-margintwo">
+        <c:SuccessGoalFinalEngagement SecondSuccessGoalList="{!v.selectedInitialGoalList}" recId="{!v.recordId}"/>
+    </div>
+    <div>
+     <lightning:input name="input1" value="{! v.OtherGoals}" label="Other Goals" placeholder="Type here..." style="width:93%;"/>    
+    </div>
+    <div class="button-class">      
+        <lightning:button variant="brand" label="Save" onclick="{!c.saveRecord }" class="slds-align_absolute-center"/>
+        <lightning:spinner aura:id="mySpinner" alternativeText="Processing.." title="Processing.." variant="brand" size="large" class="slds-hide"/>
+    </div>  
+</aura:component>

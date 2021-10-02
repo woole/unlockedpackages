@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Open_In_Same_Window__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If this is checked the Assisted Sales UI is opened in the same window for each Opp (replacing the existing info)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>uncheck this if you want a window per opportunity</inlineHelpText>
+    <label>Open In Same Window</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

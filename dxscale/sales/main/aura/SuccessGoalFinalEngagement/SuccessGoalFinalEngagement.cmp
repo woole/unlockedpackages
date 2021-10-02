@@ -1,0 +1,20 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" controller="OnboardingSuccessGoals">
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>  
+    <aura:attribute name="FinalGoalList" type="List" default="[]"/>
+    <aura:attribute name="SecondSuccessGoalList" type="List" default="[]"/>
+    <aura:handler name="change" value="{!v.SecondSuccessGoalList}" action="{!c.onChangeofInitial}"/>
+    <aura:attribute name="FinalselectedGoalList" type="List" default="[]"/>
+    <aura:attribute name="FinalselectedGoalListonSave" type="List" default="[]"/>
+    <aura:registerEvent name="onChangeOfValue" type="c:OnboardingSuccessGoalEvent"/>
+    <aura:attribute name="recId" type="String"/>   
+    <div>
+        
+        <lightning:dualListbox name="SuccessGoaltwo"
+                               label="Final Success Goals"
+                               sourceLabel="Available Goals"
+                               selectedLabel="Selected Goals"
+                               options="{!v.FinalGoalList}"
+                               value="{!v.FinalselectedGoalList}"
+                               onchange="{!c.handleGoalChange}"/>
+    </div>   
+</aura:component>

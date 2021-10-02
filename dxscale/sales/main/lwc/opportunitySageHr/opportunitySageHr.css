@@ -1,0 +1,28 @@
+.opportunity-container {
+    background: white !important;
+    padding: 10px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgray;
+
+}
+.opportunity-title
+{
+    font-size: 20px;
+    font-weight: bold;  
+    padding: 3px;
+    background:lightgray;
+    border-radius: 3px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: lightgray;  
+}
+.inner-div{
+    display:inline-block;
+    margin-left: 20%;
+}
+.inner-div2{
+    display:inline-block;
+    margin-left: 42%;
+}

@@ -1,0 +1,33 @@
+<template>
+    <div class="borderstyle">
+    <div style="padding:10px; background:#f4f4f4;">
+        <span style="font-size:20px; font-weight:700;">Partners</span>
+        <span style="float:right">
+            <lightning-button variant="brand" label="New Partner" title="New Partner" onclick={navigateToNewOpportunityPartner}
+            class="slds-m-left_x-small"></lightning-button>
+        </span>
+    </div>
+    <div class="borderstyle">
+        <lightning-card title="Primary Partner" >
+            <div if:true={viewPrimaryPartnerList} class="slds-scrollable" style="max-height:20rem; border: 2px solid #f4f4f4; border-radius:5px;">
+                <lightning-datatable key-field="Id" data={viewPrimaryPartnerList} hide-checkbox-column="true" onrowaction={handleRowAction} columns={primarycolumns}>
+                </lightning-datatable>
+            </div>
+            <div if:true={error}>
+                {error}
+            </div>
+        </lightning-card>
+    </div>
+    <div class="borderstyle">
+        <lightning-card title="Choose Partner to set as Primary" >
+            <div if:true={viewOpportunityPartnerList} class="slds-scrollable" style="max-height:20rem; border: 2px solid #f4f4f4; border-radius:5px;">
+                <lightning-datatable key-field="Id" data={viewOpportunityPartnerList} hide-checkbox-column="true" onrowaction={handleRowAction} columns={columns}>
+                </lightning-datatable>
+            </div>
+            <div if:true={error}>
+                {error}
+            </div>
+        </lightning-card>
+    </div>
+    </div>
+</template>

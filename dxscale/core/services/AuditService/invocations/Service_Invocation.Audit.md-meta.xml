@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Audit</label>
+    <protected>false</protected>
+    <values>
+        <field>Async_Only_Log_Service__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Async_Platform_Event__c</field>
+        <value xsi:type="xsd:string">Audit_Inbound_Event__e</value>
+    </values>
+    <values>
+        <field>External_Invocation__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>External_Restricted_User__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Input_Creation_Class__c</field>
+        <value xsi:type="xsd:string">ServiceAudit</value>
+    </values>
+    <values>
+        <field>Input_Interface_Version__c</field>
+        <value xsi:type="xsd:string">IService_Audit</value>
+    </values>
+    <values>
+        <field>Invocation_Permission__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Invocation_Restricted_By_Permission__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Invocation_Type__c</field>
+        <value xsi:type="xsd:string">Audit</value>
+    </values>
+    <values>
+        <field>Iteration__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>Log_Requests__c</field>
+        <value xsi:type="xsd:boolean">false</value>
+    </values>
+    <values>
+        <field>Method__c</field>
+        <value xsi:type="xsd:string">audit</value>
+    </values>
+    <values>
+        <field>Output_Audit_Override_Option__c</field>
+        <value xsi:type="xsd:string">Override</value>
+    </values>
+    <values>
+        <field>Output_Interface_Version__c</field>
+        <value xsi:type="xsd:string">IService_Output_Master</value>
+    </values>
+    <values>
+        <field>Service_Name__c</field>
+        <value xsi:type="xsd:string">AuditService</value>
+    </values>
+    <values>
+        <field>Use_Cache_Partition__c</field>
+        <value xsi:type="xsd:string">local.FrameworkCache</value>
+    </values>
+    <values>
+        <field>Use_Cache__c</field>
+        <value xsi:type="xsd:boolean">true</value>
+    </values>
+</CustomMetadata>

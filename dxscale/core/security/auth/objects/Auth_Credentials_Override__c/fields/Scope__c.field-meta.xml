@@ -1,0 +1,11 @@
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scope__c</fullName>
+    <description>The scope you are now protecting</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Combined with other params allows you to change what is protected</inlineHelpText>
+    <label>Scope</label>
+    <length>255</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assignee__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>User whom the target Opportunity is intended to be owned by.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>User whom the target Opportunity is intended to be owned by.</inlineHelpText>
+    <label>Assignee</label>
+    <referenceTo>User</referenceTo>
+    <relationshipName>Opportunity_Assignments</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

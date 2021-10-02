@@ -1,0 +1,86 @@
+<apex:page showHeader="true" Controller="PowerBIControllerExt" action="{!redirectOnCallback}" >
+    
+    <html>
+        <head>
+        </head>
+        
+        <apex:includeScript value="{!$Resource.PBIJS}"/>
+        
+        <apex:outputPanel rendered="{!NOT(hasToken)}"><a href='{!authUrl}'>Login</a></apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!hasToken}">Already has token</apex:outputPanel>
+        
+        <apex:form >
+            <apex:actionFunction name="refreshAccessToken" action="{!refreshAccessToken}"/>
+        </apex:form>
+        <div id="myReport" style="height: 800px;"/>
+        
+        
+        <script>
+        
+        let accessToken = '{!JSENCODE(PBIaccess_token)}';
+        let refreshToken = '{!JSENCODE(PBIrefresh_token)}';
+        let expires_on = '{!JSENCODE(PBIexpires_on)}';
+        let validateResult = '{!JSENCODE(validateResult)}';
+        let selectedReport = '{!JSENCODE(reportId)}'; 
+        
+        window.onload = function() {
+            
+            if(window.location.href.includes('code='))
+            {
+                window.close();
+                window.opener.location.reload();
+            }
+            
+            let expiresOn = parseInt(expires_on);
+            let currentTime = Date.now()/1000;
+            
+            if(expiresOn <= currentTime || !accessToken)
+            { 
+                var loginWindow = window.open('{!authUrl}','Login','width=250,height=900,0,status=0');
+                
+            } else if((expiresOn - 2000) <= currentTime)
+            {
+                refreshAccessToken();
+            }
+            
+            console.log('Ac ='+'{!accountId}');
+            var accFilter = {
+              $schema: 'http://powerbi.com/product/schema#basic',
+              target: {
+                table: 'Account',
+                column: 'SF_ID'
+              },
+              operator: 'eq',
+              values:['{!accountId}'],
+              filterType: 1, // pbi.models.FilterType.BasicFilter
+              requireSingleSelection: true // Limits selection of values to one.
+            };
+            
+            
+            var embedConfiguration = {
+                type: 'report',
+                id: selectedReport,
+                embedUrl: 'https://app.powerbi.com/reportEmbed',
+                filters: [accFilter],
+                settings: {
+                    filterPaneEnabled: false,
+                    navContentPaneEnabled: true
+                }
+            };
+            console.log(JSON.stringify(embedConfiguration));
+            powerbi.accessToken = '{!PBIaccess_token}';
+            var element = document.getElementById('myReport');
+            var report = powerbi.embed(element, embedConfiguration);
+            console.log(report);
+        }
+        
+        window.onbeforeclose = function()
+        {
+            window.opener.update(window.location.href);
+        }
+        
+        </script>
+    </html>
+    
+</apex:page>

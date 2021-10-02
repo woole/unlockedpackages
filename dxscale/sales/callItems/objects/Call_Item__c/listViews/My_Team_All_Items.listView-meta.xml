@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Team_All_Items</fullName>
+    <columns>NAME</columns>
+    <columns>Campaign__c</columns>
+    <columns>Account__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Status__c</columns>
+    <columns>Hint__c</columns>
+    <columns>Attempted_Calls__c</columns>
+    <columns>isOpenedByOwner__c</columns>
+    <columns>Active_Start_Date__c</columns>
+    <columns>Target_Finish_Date__c</columns>
+    <columns>Visibility_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Unmatched,Unassigned,Missing Contact,To Be Actioned,Working,Converted,Not Accepted,Closed</value>
+    </filters>
+    <filters>
+        <field>Is_My_Direct_Report__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>My Team All Items</label>
+    <sharedTo>
+        <group>Call_List_Sales_Director_Users</group>
+        <group>Call_List_Sales_Manager_Users</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>ProdHoldingSumm_ProdHoldingMod</label>
+    <protected>false</protected>
+    <values>
+        <field>JSONConfig__c</field>
+        <value xsi:type="xsd:string">{
+  &quot;limitRows&quot;: 500,
+  &quot;whereClause&quot;: &quot;SalesforceAccountId__c = &quot;,
+  &quot;orderByClause&quot;: &quot;ProductName__c&quot;,
+  &quot;terminal&quot;: true,
+  &quot;fields&quot;: [
+    {
+      &quot;label&quot;: &quot;Module Name&quot;,
+      &quot;api&quot;: &quot;ProductName__c&quot;,
+      &quot;type&quot;: &quot;String&quot;,
+      &quot;sortable&quot;: true,
+      &quot;display&quot;: true,
+      &quot;initialWidth&quot;: 140
+    },
+    {
+      &quot;label&quot;: &quot;Companies&quot;,
+      &quot;api&quot;: &quot;NoOfCompanies__c&quot;,
+      &quot;type&quot;: &quot;String&quot;,
+      &quot;sortable&quot;: true,
+      &quot;display&quot;: true,
+      &quot;initialWidth&quot;: 110
+    },
+    {
+      &quot;label&quot;: &quot;Employees&quot;,
+      &quot;api&quot;: &quot;NoOfEmployees__c&quot;,
+      &quot;type&quot;: &quot;String&quot;,
+      &quot;sortable&quot;: true,
+      &quot;display&quot;: true,
+      &quot;initialWidth&quot;: 110
+    },
+    {
+      &quot;label&quot;: &quot;Users&quot;,
+      &quot;api&quot;: &quot;NoOfUsers__c&quot;,
+      &quot;type&quot;: &quot;String&quot;,
+      &quot;sortable&quot;: true,
+      &quot;display&quot;: true,
+      &quot;initialWidth&quot;: 110
+    },
+    {
+      &quot;label&quot;: &quot;Product Holding Key&quot;,
+      &quot;api&quot;: &quot;ProductHolding_Key__c&quot;,
+      &quot;type&quot;: &quot;String&quot;,
+      &quot;sortable&quot;: true,
+      &quot;display&quot;: true,
+      &quot;initialWidth&quot;: 160
+    },
+    {
+      &quot;label&quot;: &quot;Product Module Key&quot;,
+      &quot;api&quot;: &quot;ProductHoldingModules_Key__c&quot;,
+      &quot;type&quot;: &quot;String&quot;,
+      &quot;display&quot;: false
+    },    
+    {
+      &quot;label&quot;: &quot;Product ID&quot;,
+      &quot;api&quot;: &quot;ProductID__c&quot;,
+      &quot;type&quot;: &quot;String&quot;,
+      &quot;sortable&quot;: true,
+      &quot;display&quot;: true,
+      &quot;initialWidth&quot;: 110
+    },
+    {
+      &quot;label&quot;: &quot;Registration Date&quot;,
+      &quot;api&quot;: &quot;RegistrationDate__c&quot;,
+      &quot;type&quot;: &quot;date&quot;,
+      &quot;sortable&quot;: true,
+      &quot;display&quot;: true,
+      &quot;initialWidth&quot;: 140
+    },
+    {
+      &quot;api&quot;: &quot;SalesforceAccountId__c&quot;,
+      &quot;type&quot;: &quot;id&quot;,
+      &quot;display&quot;: false
+    }
+  ],
+  &quot;objectType&quot;: &quot;VW_Connect_ProductHoldingModules__x&quot;
+}</value>
+    </values>
+</CustomMetadata>

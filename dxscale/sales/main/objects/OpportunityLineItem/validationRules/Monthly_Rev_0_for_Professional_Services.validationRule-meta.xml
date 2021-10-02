@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Monthly_Rev_0_for_Professional_Services</fullName>
+    <active>true</active>
+    <description>Monthly Recurring Revenue should be 0 if the product is Professional Services</description>
+    <errorConditionFormula>AND( Product2.Name = &quot;Professional Services&quot;,  
+Monthly_Recurring_Revenue__c &lt;&gt; 0 )</errorConditionFormula>
+    <errorDisplayField>Monthly_Recurring_Revenue__c</errorDisplayField>
+    <errorMessage>Monthly revenue should be 0 if the product is Professional Services</errorMessage>
+</ValidationRule>

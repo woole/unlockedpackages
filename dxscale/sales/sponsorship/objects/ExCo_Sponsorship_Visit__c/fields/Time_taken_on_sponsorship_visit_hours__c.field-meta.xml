@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_taken_on_sponsorship_visit_hours__c</fullName>
+    <description>EAD-2227: Time taken on sponsorship visit (hours)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Time taken on sponsorship visit (hours)[Upto 5 digits]</inlineHelpText>
+    <label>Time taken on sponsorship visit (hours)</label>
+    <precision>6</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

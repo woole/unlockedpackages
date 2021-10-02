@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuraDefinitionBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>46.0</apiVersion>
+    <description>To Count the number of logged calls and see the owner opens the callitem or not. JIRA -CCORE-1653</description>
+</AuraDefinitionBundle>

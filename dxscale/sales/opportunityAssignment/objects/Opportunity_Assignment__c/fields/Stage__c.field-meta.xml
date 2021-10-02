@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <description>Same as Opportunity-Stage</description>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Discovery</fullName>
+                <default>false</default>
+                <label>Discovery</label>
+            </value>
+            <value>
+                <fullName>Evaluating</fullName>
+                <default>false</default>
+                <label>Evaluating</label>
+            </value>
+            <value>
+                <fullName>Solution Validation</fullName>
+                <default>false</default>
+                <label>Solution Validation</label>
+            </value>
+            <value>
+                <fullName>Confirming Value</fullName>
+                <default>false</default>
+                <label>Confirming Value</label>
+            </value>
+            <value>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+                <label>Closed Won</label>
+            </value>
+            <value>
+                <fullName>Closed Lost</fullName>
+                <default>false</default>
+                <label>Closed Lost</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Qualify</fullName>
+                <default>false</default>
+                <label>Qualify</label>
+            </value>
+            <value>
+                <fullName>Selection</fullName>
+                <default>false</default>
+                <label>Selection</label>
+            </value>
+            <value>
+                <fullName>Negotiating</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Negotiating</label>
+            </value>
+            <value>
+                <fullName>Qualification</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Qualification</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Win_Loss_Reject_Reasons_Level2__c</fullName>
+    <description>Same as Opportunity-Win_Loss_Reject_Reasons_Level2</description>
+    <externalId>false</externalId>
+    <label>Win/Loss/Reject Reasons Level2</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Xero</fullName>
+                <default>false</default>
+                <label>Xero</label>
+            </value>
+            <value>
+                <fullName>Quickbooks</fullName>
+                <default>false</default>
+                <label>Quickbooks</label>
+            </value>
+            <value>
+                <fullName>Moneysoft</fullName>
+                <default>false</default>
+                <label>Moneysoft</label>
+            </value>
+            <value>
+                <fullName>Iris</fullName>
+                <default>false</default>
+                <label>Iris</label>
+            </value>
+            <value>
+                <fullName>Brightpearl</fullName>
+                <default>false</default>
+                <label>Brightpearl</label>
+            </value>
+            <value>
+                <fullName>Deskera</fullName>
+                <default>false</default>
+                <label>Deskera</label>
+            </value>
+            <value>
+                <fullName>Dolibarr</fullName>
+                <default>false</default>
+                <label>Dolibarr</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics GP</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics GP</label>
+            </value>
+            <value>
+                <fullName>Microsoft Dynamics NAV</fullName>
+                <default>false</default>
+                <label>Microsoft Dynamics NAV</label>
+            </value>
+            <value>
+                <fullName>Odoo</fullName>
+                <default>false</default>
+                <label>Odoo</label>
+            </value>
+            <value>
+                <fullName>Stafiz</fullName>
+                <default>false</default>
+                <label>Stafiz</label>
+            </value>
+            <value>
+                <fullName>SYSPRO</fullName>
+                <default>false</default>
+                <label>SYSPRO</label>
+            </value>
+            <value>
+                <fullName>Upgrade Product</fullName>
+                <default>false</default>
+                <label>Upgrade Product</label>
+            </value>
+            <value>
+                <fullName>Upgrade Support</fullName>
+                <default>false</default>
+                <label>Upgrade Support</label>
+            </value>
+            <value>
+                <fullName>Downgrade Product</fullName>
+                <default>false</default>
+                <label>Downgrade Product</label>
+            </value>
+            <value>
+                <fullName>Discount</fullName>
+                <default>false</default>
+                <label>Discount</label>
+            </value>
+            <value>
+                <fullName>Full Value</fullName>
+                <default>false</default>
+                <label>Full Value</label>
+            </value>
+            <value>
+                <fullName>Downgrade Support</fullName>
+                <default>false</default>
+                <label>Downgrade Support</label>
+            </value>
+            <value>
+                <fullName>Extension</fullName>
+                <default>false</default>
+                <label>Extension</label>
+            </value>
+            <value>
+                <fullName>Accountant</fullName>
+                <default>false</default>
+                <label>Accountant</label>
+            </value>
+            <value>
+                <fullName>BP</fullName>
+                <default>false</default>
+                <label>BP</label>
+            </value>
+            <value>
+                <fullName>No migration Tool</fullName>
+                <default>false</default>
+                <label>No migration Tool</label>
+            </value>
+            <value>
+                <fullName>Bureau</fullName>
+                <default>false</default>
+                <label>Bureau</label>
+            </value>
+            <value>
+                <fullName>Other (please specify in notes)</fullName>
+                <default>false</default>
+                <label>Other (please specify in notes)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

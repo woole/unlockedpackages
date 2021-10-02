@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Converted_Must_Have_Opportunity</fullName>
+    <active>true</active>
+    <description>You can only set a Call Item to &quot;Converted&quot; if it has an associated Opportunity</description>
+    <errorConditionFormula>AND(
+ $Setup.CallItemControlSwtich__c.Run_Validation_Rules__c,
+ ISPICKVAL (Status__c, &quot;Converted&quot;),
+ ISBLANK( Opportunity__c ) 
+)</errorConditionFormula>
+    <errorMessage>You can only set a Call Item to &quot;Converted&quot; if it has an associated Opportunity</errorMessage>
+</ValidationRule>

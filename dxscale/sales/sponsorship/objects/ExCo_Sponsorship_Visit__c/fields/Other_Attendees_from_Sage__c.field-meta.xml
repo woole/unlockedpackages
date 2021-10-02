@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Attendees_from_Sage__c</fullName>
+    <description>EAD-2227: Other Attendees from Sage[Upto 255 characters]</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Other Attendees from Sage[Upto 255 characters]</inlineHelpText>
+    <label>Other Attendees from Sage</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

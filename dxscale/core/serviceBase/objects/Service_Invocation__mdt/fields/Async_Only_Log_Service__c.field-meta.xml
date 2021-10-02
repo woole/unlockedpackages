@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Async_Only_Log_Service__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>An async service with Log Requests set to true will create two audit records by default, one at invocation time and one when the service runs. Checking this means only the service call is logged</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>An async service with Log Requests set to true will create two audit records by default, one at invocation time and one when the service runs. Checking this means only the service call is logged</inlineHelpText>
+    <label>Async Only Log Service</label>
+    <type>Checkbox</type>
+</CustomField>

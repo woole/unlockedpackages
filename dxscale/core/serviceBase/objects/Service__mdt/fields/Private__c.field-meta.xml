@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Private__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked if this is a service that should not be called outside of its implemented Virtual Package - defaults to false.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>Checked if this is a service that should not be called outside of its implemented Virtual Package - defaults to false.</inlineHelpText>
+    <label>Private</label>
+    <type>Checkbox</type>
+</CustomField>

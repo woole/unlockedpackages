@@ -1,0 +1,77 @@
+<aura:component implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes"
+    controller="ODSConnectViewLtCtrl">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+
+    <aura:attribute name="recordId" type="Id" />
+
+    <aura:attribute name="columnJsonString" type="String"/>
+    <aura:attribute name="viewName" type="String"/>
+    <aura:attribute name="label" type="String" />
+    <aura:attribute name="fullLabel" type="String" />
+    <aura:attribute name="isSetUp" type="Boolean" default="false"/>
+
+    <!-- attributes for the modules component -->
+    <aura:attribute name="viewData" type="List" default="[]" access="PRIVATE" />
+    <aura:attribute name="viewColumns" type="List" default="[]" access="PRIVATE" />
+
+    <aura:attribute name="enableInfiniteLoading" type="Boolean" default="true"/>
+
+    <aura:attribute name="numRecords" type="Integer" default="0" />
+    <aura:attribute name="maxRecordCount" type="Integer" default="0" />
+    <aura:attribute name="loadMoreStatus" type="String" default=""/>
+    <aura:attribute name="loadMoreOffset" type="Integer" default="20" />
+    <aura:attribute name="rowsToLoad" type="Integer" default="5" />
+    
+    
+
+
+    <!-- lightning:datatable single row select - radio buttons -->
+    <aura:attribute name="maxRowSelection" type="Integer" default="1" access="PRIVATE" />
+
+
+    <div aura:id="DataUnavailable" class="slds-hide custom-box">
+        <lightning:card title="{! v.label }" iconName="utility:warning">
+            <lightning:layout>
+                <lightning:layoutItem size="12" padding="around-small">
+                    <lightning:formattedText value="{! v.label + ' Not Available' }" />
+                </lightning:layoutItem>
+            </lightning:layout>
+        </lightning:card>
+    </div>
+    <div aura:id="LoadingMsg" class="slds-show custom-box">
+            <lightning:card title="{! v.label }" iconName="standard:generic_loading">
+                <lightning:layout>
+                    <lightning:layoutItem size="12" padding="around-small">
+                            <lightning:spinner alternativeText="Loading" />
+                            <lightning:formattedText value="Loading..." />
+                    </lightning:layoutItem>
+                </lightning:layout>
+            </lightning:card>
+    </div>    
+
+    <div aura:id="DataAvailable" class="slds-hide custom-box">
+        <div style="border-bottom-style: solid ;border-width: 3px; border-color: lightgray;">
+            
+                <lightning:card title="{!v.fullLabel}" iconName="standard:related_list">
+                        <lightning:layout>
+                            <lightning:layoutItem size="12" padding="around-small">
+                                
+                                <aura:if isTrue="{!v.maxRecordCount > 0}">
+                                        <div aura:id="tableView">
+                                        <lightning:datatable columns="{! v.viewColumns }" data="{! v.viewData }" keyField="ExternalId"
+                                            hideCheckboxColumn="true" title="{! v.label }" enableInfiniteLoading="{! v.enableInfiniteLoading }" showRowNumberColumn="true" loadMoreOffset="{! v.loadMoreOffset }" onloadmore="{! c.loadMoreData }"/>
+                                        {! v.loadMoreStatus }
+                                        </div>
+                                </aura:if>    
+                                <aura:if isTrue="{!and(v.maxRecordCount == 0, v.isSetUp)}">
+                                        <lightning:formattedText value="No Records" />
+                                </aura:if>                              
+                            </lightning:layoutItem>
+                        </lightning:layout>
+                </lightning:card>
+            
+
+        </div>
+    </div>
+     
+</aura:component>

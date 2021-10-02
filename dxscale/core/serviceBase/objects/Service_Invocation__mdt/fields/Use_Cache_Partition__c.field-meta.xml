@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_Cache_Partition__c</fullName>
+    <defaultValue>&quot;local&quot;</defaultValue>
+    <description>Fully Qualified Name fo the Org Cache Partition to use if Use Cache is set to true</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Fully Qualified Name fo the Org Cache Partition to use if Use Cache is set to true</inlineHelpText>
+    <label>Use Cache Partition</label>
+    <length>40</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

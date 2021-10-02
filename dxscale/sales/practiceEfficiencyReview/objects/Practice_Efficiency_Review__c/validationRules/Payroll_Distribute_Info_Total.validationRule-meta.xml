@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payroll_Distribute_Info_Total</fullName>
+    <active>true</active>
+    <description>Question 19: Total of Percentage of all distribute documents and reports to employers and employees options should be less than or equal to 100%.</description>
+    <errorConditionFormula>OR( Payroll_Distribute_Info_Total__c &gt; 1.0,
+ Payroll_Distribute_Info_Total__c &lt; 0.0
+)</errorConditionFormula>
+    <errorMessage>Question 19: Total of Percentage of all distribute documents and reports to employers and employees options should be less than or equal to 100%.</errorMessage>
+</ValidationRule>

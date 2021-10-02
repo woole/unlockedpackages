@@ -1,0 +1,46 @@
+<template>
+    <template if:false={dataUnavailable}>
+    <div class="slds-show">
+        <lightning-card icon-name="standard:dataset" title={title}>
+            <lightning-layout>
+
+                <lightning-layout-item padding="around-small">
+                    <!-- 1 -->
+                    <template if:true={showCard1}>
+                    <c-key-info-card cardinfo={cardone} title={label.Card1Headline} cardname="slds-card card-one slds-theme_shade"
+                        iconname="utility:reset_password" cssname="slds-card blue-box"></c-key-info-card>
+                    </template>
+                    <br />
+
+                    <!--2 -->
+                    <template if:true={showCard2}>
+                    <c-key-info-card cardinfo={cardtwo} title={label.Card2Headline} cardname="slds-card card-two slds-theme_shade"
+                        iconname="standard:client" cssname="slds-card green-box"></c-key-info-card>
+                    </template>  
+                    <template if:true={showLoading}>
+                        <div class="slds-card__body slds-card__body_inner">
+                            {infoMessage}
+                        </div>
+                    </template>
+                    <template if:true={showNoRecords}>
+                        <lightning-layout-item size="12" padding="horizontal-small">
+                            <lightning-formatted-text value="No Key Information Found."></lightning-formatted-text>
+                        </lightning-layout-item>                        
+                    </template>                    
+                                                             
+                </lightning-layout-item>
+            </lightning-layout>
+
+        </lightning-card>
+    </div>
+    </template>
+    <template if:true={dataUnavailable}>
+        <lightning-card icon-name="utility:warning" title={title}>
+                <lightning-layout-item size="12" padding="horizontal-small">        
+                    <lightning-formatted-text value="Key data not currently available"></lightning-formatted-text>
+                </lightning-layout-item>
+        </lightning-card>       
+    </template>
+
+    <p>{error}</p>
+</template>

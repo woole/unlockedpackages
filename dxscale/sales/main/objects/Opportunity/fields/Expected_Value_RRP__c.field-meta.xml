@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Value_RRP__c</fullName>
+    <description>To capture the expected contract value that the customer would have paid</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Populate the monthly value the customer was paying before the downgrade/discount. If you have confirmed the customer will pay full value, both opportunity value and expected value should be the same.</inlineHelpText>
+    <label>Monthly Expected Value (RRP)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
