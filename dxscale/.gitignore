@@ -1,0 +1,4 @@
+.sfdx/
+config/
+.forceignore
+**/lwc/jsconfig.json
